@@ -1,0 +1,54 @@
+## creating class and object
+
+class Person:
+    # Attributes (Properties) of the class
+    # constructor
+    def __init__(self, name, age):    #parameters
+        self.name = name
+        self.age = age
+        
+    # Methods (Functions) of the class
+    def greet(self):
+        return f"Hello, my name is {self.name} and I am {self.age} years old."
+
+# Create an instance of the class outside the class definition
+person1 = Person("John", 36) #arguments
+print(person1.greet())
+
+
+## main concepts of OOP
+# 1. Encapsulation
+# 2. Inheritance
+# 3. Polymorphism
+# 4. Abstraction
+    
+    
+
+
+
+## encapsulation:::
+
+class BankAcc:
+    
+    # Constructor to initialize the balance
+    def __init__(self, balance):
+        self.__balance = balance  # private attribute(can't be accessed outside the class directly)
+        
+    # Method to deposit money
+    def deposit(self, amount):
+        self.__balance += amount  # updating the balance
+        
+    # Method to withdraw money
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount  # updating the balance
+            
+    # Method to get the balance
+    def get_balance(self):
+        return self.__balance
+
+# Create an account object
+account = BankAcc(1000)
+account.deposit(500)  # add 500 to the balance
+account.withdraw(200)  # subtract 200 from the balance
+print(account.get_balance())  # get the balance

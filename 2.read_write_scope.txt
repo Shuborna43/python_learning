@@ -1,0 +1,91 @@
+// file read
+
+#  file handling
+# first way to open/read a text file
+# file = open("book.txt", "r")
+# # return string value
+# readFile = file.read()         
+# print(readFile)
+# file.close()
+
+
+# second way to open/read a text file
+# with open("book.txt", "r") as file:
+#     readFile = file.read()
+#     print(readFile)
+    
+    
+# with open("try.txt", "r") as file:
+#     readFile = file.readlines()
+#     print(readFile)
+    
+
+with open("try.txt", "r") as file:  
+    for line in file:
+        print(line)
+
+
+
+// file write
+# file = open("try2.txt", "w")
+# file.write("harry potter\nstar wars\nlord of the rings\npython for everyday\n")
+# file.close()
+
+
+# file = open("try2.txt", "a")
+# file.write("the four-hour workhere\ngetting real\n")
+# file.close()
+
+# new file create and if file is already exit then it will give an error
+# file = open("try3.txt", "x")
+# file.write("Thr catcher in the rye\n")
+# file.close()
+
+
+file = open("try.txt", "r+")
+readFile = file.read()
+print("file read from here :",readFile)
+
+file.write("Today is thursday\n")
+file.close()
+
+
+
+// global and local scope
+
+# two types of scope . 1. Local scope 2. Global scope
+# def get_full_name(first_name, last_name):
+#     full_name = first_name + ' ' + last_name
+#     # print("From local space",full_name)
+#     return full_name
+
+
+# expectedResult = get_full_name('John', 'Doe')
+# print(expectedResult + ' ' + 'shorove')
+# print("Full name is :  ",get_full_name('John', 'Doe'))
+  
+  
+# first_name = 'John'  
+  
+# def get_full_name():
+#     global first_name
+#     first_name = 'Doe'
+#     print(first_name)
+    
+# get_full_name()
+# print(first_name)
+  
+  
+  
+def increment(counter):
+    counter = counter + 1
+    print(counter)
+    
+counter = 10
+
+increment(counter)
+print(counter)
+    
+  
+    
+
