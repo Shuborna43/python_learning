@@ -1,0 +1,129 @@
+// try---except---finally
+
+# key points of error handling
+
+# if no exception occurs :
+#     the try continues, and
+#     the except block is skipped, and
+#     the program continues
+
+
+# if an exception occurs:
+#     the rest of try is skipped, and
+#     the except block is executed, and
+#     the program continue after the except block
+
+
+
+# TypeError vs ValueError
+# x = int("56") 
+# # ValueError
+# x = int("hello")
+
+# TypeError
+# print("hello" + 123)
+
+
+
+# try:
+#     weight_kg = int(input("Enter weight in kg: "))
+#     weight_lbs = float(weight_kg) / 0.454
+
+#     print("Weight in pounds is " , weight_lbs)
+
+# except:
+#     print("Error: Can count only int value")
+
+
+
+# Multiple exception handlers
+
+# try:
+#     # ... normal code
+# except:
+#     # code to handle exceptiontype1
+# except exceptiontype2:
+#     # code to handle exceptiontype2
+# except exceptiontype3:
+#     # code to handle exceptiontype2
+
+
+
+# try:
+    
+#     go camping
+#     bonfire
+#     fishing
+#     swimming
+    
+# except carError :
+#     go to mechanic
+# except injuryError:
+#     go to hospital
+# except lostError:
+#     use map
+# except:
+#     call your parents
+
+
+
+# user_input = None
+
+# while user_input != 'q':
+    
+#     try:
+#         weight_pounds = int(input("Enter weight (in pounds) :"))
+#         height_inches = int(input("Enter height (in inches) :"))
+        
+        
+#         bmi = (float(weight_pounds) / float(height_inches * height_inches)) * 703
+#         print('BMI', bmi)
+#         print('normal')
+        
+#     except ValueError:
+#         print('Only accept int value')
+#     except ZeroDivisionError:
+#         print('Invalid height. Must be > 0 inches.')
+        
+        
+#     user_input = input("Enter any key ('q' to quit):")
+        
+        
+        
+# handle diferent types of except blocks
+# try:
+#     #simulate an exception
+#    my_list = [1,2,3]
+#    my_list.append(4)
+#    print(my_list)
+#    my_list.non_existent_method()
+# except (ValueError, TypeError):
+#     print("Caught a ValueError or TypeError")
+# except (NameError, AttributeError):
+#     print("Caught a NameError or AttributeError")
+# except:
+#     print("Caught some other type of exception")
+
+
+
+# Exception handling cleanup
+# try:
+#     #... normal code
+# except:
+#     # ... handle exception
+# finally:
+#     # always executed; e.g clean-up actions:
+    
+    
+    
+try:
+    #simulate an exception
+    print(uuuuuuu)
+except (ValueError, TypeError):
+    print("Caught a ValueError or TypeError")
+except (NameError, AttributeError):
+    print("Caught a NameError or AttributeError")
+except:
+    print("Caught some other type of exception")
+finally:
+    print('always executed block')
