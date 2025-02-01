@@ -1,0 +1,100 @@
+// raise
+
+# Difference between raise and exception handling
+
+# if weight_kg > 1000:
+#     raise ValueError("Weight is too big")
+
+
+
+# try:
+#     weight_kg = int(input("Enter your weight in kg: "))
+    
+#     if weight_kg > 1000:
+#         raise ValueError("Weight is too big")
+    
+#     weight_lbs = float(weight_kg) / 0.454
+
+#    
+#     print("Weight in pounds is" , weight_lbs)
+    
+# except ValueError:
+#     print("Error: Could not calulate the weight in pounds")
+
+
+
+# def divide_numbers(a, b):
+#     if b == 0:
+#         raise ZeroDivisionError("you can not divide by zero!")
+#     return a / b
+
+
+# def handle():     try:
+#         result = divide_numbers(10, 0)
+#         print("Result:", result)
+#     except ZeroDivisionError as e:
+#         print("Error handled:" , e)
+        
+# handle()
+
+
+
+
+
+"""
+get user's weight in pounds from keyboard
+"""
+
+
+
+
+
+//os module
+# os ---> operating system
+
+import os
+
+
+# get current working directory
+print(os.getcwd())
+
+# making directory
+# os.mkdir('python_try2')
+
+#remove a dir
+# os.rmdir("python_try")
+
+# remove a file
+# os.remove("try.txt")
+
+
+
+# Windows ----> "subdir\try.txt"
+# Macos ----> "subdir/try.txt"
+
+# print('this is working', os.path.join('python_try2', 'try.txt'))
+
+
+# os.path.split(path)
+# path = "python_try2/try.txt"
+# head, tail = os.path.split(path)
+# print(head)
+# print(tail)
+
+
+# path = "python_try2/try.txt"
+# # print(os.path.exists(path))
+# # print(os.path.isfile(path))
+# print(os.path.getsize(path))
+
+
+
+# os.walk()
+for dirpath, dirnames, filenames in os.walk('python_try2'):
+    print("current directory", dirpath)
+    print("sub directory", dirnames)
+    print("filenames", filenames)
+
+
+
+
