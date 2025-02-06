@@ -1,0 +1,9 @@
+Set of questions related to try---except and raise
+
+1. Write a Python function safe_divide(a, b) that divides a by b. If b is zero, raise a ValueError with the message "Division by zero is not allowed." Use a try and except block to handle the exception.
+
+2.Write a function validate_age(age) that takes an age as input. If the age is negative, raise a ValueError with the message "Age cannot be negative." Use try and except to catch this error and return a friendly error message.
+
+3.Write a function read_file(filename) that reads a file and returns its content. Use a try and except block to catch a FileNotFoundError and return the message "File not found."
+
+4.Create a function check_password(password) that raises a custom exception called WeakPasswordError if the password length is less than 8. Use try and except to catch this exception and return an appropriate message.
