@@ -78,7 +78,6 @@ current_year = 2025
 text_1 = f"{first_name} {last_name} is in class VII in {current_year}"
 text_2 = f"{first_name} {last_name} is in class VII in %d" % (current_year)
 
-#"%s purchased %d socks for $%.3f for each" % (name_7, quantity, price)
 
 print (text_1)
 print (text_2)
