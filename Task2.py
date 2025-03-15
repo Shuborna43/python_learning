@@ -48,17 +48,21 @@ first_name = input ("enter your First Name:   ")
 last_name = input ("enter your Last Name:  ")
 year_born = int (input ("enter the year you born:  "))
 
-#CVS_1 = f"First Name? {first_name}\nLast name? {last_name}\n Born? {year_born}"
-# CVS_2 = "First Name?", "%s"% (first_name)  
-# CVS_3 = "Last Name?", "%s"%(last_name)  
-# CVS_4 = "Born?", "%d"%(year_born)  
+CVS_1 = f"First Name? {first_name}\nLast name? {last_name}\n Born? {year_born}"
+CVS_2 = "First Name?", "%s"% (first_name)  
+CVS_3 = "Last Name?", "%s"%(last_name)  
+CVS_4 = "Born?", "%d"%(year_born)  
 
-#print (CVS_1)
-# print (f"{CVS_2}")
-# print (f"{CVS_3}") 
-# print (f"{CVS_4}")
-# CVS_5 = "First Name?:", "%s","Last Name?:","%s","Born?:","%d"%(first_name, last_name, year_born)   
-# print (CVS_5)
+print (CVS_1)
+print (CVS_2)
+print (CVS_3) 
+print (CVS_4)
+
+
+CVS_5 = "First Name?: %s,Last Name?:,%s,Born?:,%d" %(first_name, last_name, year_born)   
+print (CVS_5)
+
+
 
 
 
@@ -71,7 +75,20 @@ year_born = int (input ("enter the year you born:  "))
 # 	}
 # ]"
 
-Json_format_1= '{ "first_name": "%s", "last_name": "%s", "Year Born": "%d"}' %(first_name, last_name, year_born)
+
+
+
+
+# # Json_format_1 = "{+'"'+first_name:"+'"'+ '"'+first_name+'"'+","+ '"'+"last_name:"+'"'+'"'+last_name+'"'+","+'"'+ "experience:"+'"'+ str(experience)+","+ '"'+"hourly_wage_cad:"+'"'+ str(hourly_wage_cad)+ "}"
+# # print (Json_format_1)
+
+# Json_format_2 = '{ "first_name": "%s", "last_name": "%s", "experience": "%d", "hourly_wage_cad": "%.2f"}' %(first_name, last_name, experience, hourly_wage_cad)  
+
+# print (Json_format_2)
+
+# # '''{"first_name": "%s", "last_name": "%s","years_Employed": "%d", "hourly_rate": "%.2f"}'''%(first_name, last_name, years_employed, hourly_rate)    
+
+Json_format_1= '''{ "first_name": "%s", "last_name": "%s", "Year Born": "%d"}''' %(first_name, last_name, year_born)
 print (Json_format_1)
 
 
