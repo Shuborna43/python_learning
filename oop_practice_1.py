@@ -199,92 +199,92 @@
 
 
 
-class Sphere:
-    def __init__(self, ID, rad=1, color="White", pie=3.1416):
-        self.ID = ID
-        self.rad = rad
-        self.color = color
-        self.pie = pie
-        self.volume = (4/3) * self.pie * self.rad**3  # Calculate initial volume
+# class Sphere:
+#     def __init__(self, ID, rad=1, color="White", pie=3.1416):
+#         self.ID = ID
+#         self.rad = rad
+#         self.color = color
+#         self.pie = pie
+#         self.volume = (4/3) * self.pie * self.rad**3  # Calculate initial volume
 
-    def printDetails(self):
-        print(f"Sphere ID: {self.ID}")
-        print(f"Color: {self.color}")
-        print(f"Volume: {self.volume:.4f}")  # Format volume to 4 decimal places
+#     def printDetails(self):
+#         print(f"Sphere ID: {self.ID}")
+#         print(f"Color: {self.color}")
+#         print(f"Volume: {self.volume:.4f}")  # Format volume to 4 decimal places
 
-    def merge_sphere(self, *spheres):
-        print("Spheres are being merged")
-        total_volume = self.volume  # Start with current sphere volume
-        colors = {self.color}  # Store color of this sphere
+#     def merge_sphere(self, *spheres):
+#         print("Spheres are being merged")
+#         total_volume = self.volume  # Start with current sphere volume
+#         colors = {self.color}  # Store color of this sphere
 
-        for sphere in spheres:
-            total_volume += sphere.volume  # Add volumes
-            colors.add(sphere.color)  # Collect colors
+#         for sphere in spheres:
+#             total_volume += sphere.volume  # Add volumes
+#             colors.add(sphere.color)  # Collect colors
 
-        # Update the radius based on total volume
-        # new_radius = ((3 * total_volume) / (4 * self.pie)) ** (1/3)
+#         # Update the radius based on total volume
+#         # new_radius = ((3 * total_volume) / (4 * self.pie)) ** (1/3)
 
-        # Update sphere properties
-        # self.rad = new_radius
-        self.volume = total_volume
+#         # Update sphere properties
+#         # self.rad = new_radius
+#         self.volume = total_volume
 
-        # If different colors are present, set to 'Mixed Color'
-        if len(colors) > 1:
-            self.color = "Mixed Color"
-
-
-# ✅ **Test Cases**
-sphere1 = Sphere("Sphere 1")
-print("1***************")
-sphere1.printDetails()
-print("2***************")
-
-sphere2 = Sphere("Sphere 2", 3)
-print("3***************")
-sphere2.printDetails()
-print("4***************")
-
-sphere3 = Sphere("Sphere 3", 2)
-print("5***************")
-sphere3.printDetails()
-print("6***************")
-
-sphere3.merge_sphere(sphere1, sphere2)  # Merging sphere1 & sphere2 into sphere3
-print("7***************")
-sphere3.printDetails()
-print("8***************")
-
-sphere4 = Sphere("Sphere 4", 5, "Purple")
-print("9***************")
-sphere4.merge_sphere(sphere3)  # Merging sphere3 into sphere4
-print("10***************")
-sphere4.printDetails()
+#         # If different colors are present, set to 'Mixed Color'
+#         if len(colors) > 1:
+#             self.color = "Mixed Color"
 
 
+# # **Test Cases**
+# sphere1 = Sphere("Sphere 1")
+# print("1***************")
+# sphere1.printDetails()
+# print("2***************")
+
+# sphere2 = Sphere("Sphere 2", 3)
+# print("3***************")
+# sphere2.printDetails()
+# print("4***************")
+
+# sphere3 = Sphere("Sphere 3", 2)
+# print("5***************")
+# sphere3.printDetails()
+# print("6***************")
+
+# sphere3.merge_sphere(sphere1, sphere2)  # Merging sphere1 & sphere2 into sphere3
+# print("7***************")
+# sphere3.printDetails()
+# print("8***************")
+
+# sphere4 = Sphere("Sphere 4", 5, "Purple")
+# print("9***************")
+# sphere4.merge_sphere(sphere3)  # Merging sphere3 into sphere4
+# print("10***************")
+# sphere4.printDetails()
 
 
 
-# Output:
-# 1***************
-# Sphere ID: Sphere 1
-# Color: White
-# Volume: 4.1888
-# 2***************
-# 3***************
-# Sphere ID: Sphere 2
-# Color: White
-# Volume: 113.09759999999999
-# 4***************
-# 5***************
-# Sphere ID: Sphere 3
-# Color: White
-# Volume: 33.5104
-# 6***************
-# Spheres are being merged
-# 7***************
-# Sphere ID: Sphere 3
-# Color: White
-# Volume: 150.7968
-# 8***************
+
+
+# # Output:
+# # 1***************
+# # Sphere ID: Sphere 1
+# # Color: White
+# # Volume: 4.1888
+# # 2***************
+# # 3***************
+# # Sphere ID: Sphere 2
+# # Color: White
+# # Volume: 113.09759999999999
+# # 4***************
+# # 5***************
+# # Sphere ID: Sphere 3
+# # Color: White
+# # Volume: 33.5104
+# # 6***************
+# # Spheres are being merged
+# # 7***************
+# # Sphere ID: Sphere 3
+# # Color: White
+# # Volume: 150.7968
+# # 8***************
 
           
