@@ -8,7 +8,7 @@
 # 1. To use regular expressions in python, we must import re. 
 # 2. The re object has methods such as; 
 # match(): checks if the pattern exists at the beginning of the string.  
-# search(): searches for the pattern throughout the entire string.  
+# search(): searches for the pattern throughout the entire string. It returns a match object from the first position where the pattern matches.  
 # split(): Splits the string based on the pattern.  
 # findall(): creates a list of all parts that match the pattern.   
 # finditer(): returns an iterator of all parts that match the pattern.  
@@ -96,3 +96,53 @@
 # result = re.findall(pattern, string)
 
 # print(result)
+
+# finditer(): The finditer() method creates a match object for each match throughout the entire string based on the regular expression pattern, and returns them as an iterator. each match obeject contains:
+# the part of the string that matched (group())
+# where the match starts (start())
+# where the match ends (end())
+# 
+#Example 1:
+# import re
+
+# string = "cat bat rat hat mat water"
+# pattern = r"\b\w{3}\b" #w{3}=words only with 3 letters, #\b helps make sure the match starts and ends at a word boundary. 
+
+# matches = re.finditer(pattern, string)
+# for match in matches:
+#     print("matched text", match.group())
+#     print("starts at", match.start(),"ends at", match.end())
+#     print ("...")
+#     #print(match)
+
+# #Example 2:
+# import re
+
+# string = "cat bat rat hat mat water"
+# pattern = r"\w{3}" #w{3}=will return only matched 3 letters
+
+# matches = re.finditer(pattern, string)
+# for match in matches:
+#     print("matched text", match.group())
+#     print("starts at", match.start(),"ends at", match.end())
+#     print ("...")
+#     #print(match)
+
+#sub(): sub() in python is used to search and replace parts of a string that match a regular expression pattern. Syntax:
+# re.sub(pattern,replacement,string) 
+
+# #Example 1:
+# import re
+
+# text = "my phone number is 017-151-58686"
+# pattern = r"\d"
+# replacement = "*"
+# result = re.sub(pattern, replacement, text)
+# print (result) 
+
+# #Example 2:
+# import re
+
+# text = "my phone number is 017-151-58686"
+# result = re.sub(r"\d", "*", text)
+# print (result) 
