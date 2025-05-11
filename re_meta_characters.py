@@ -7,7 +7,7 @@
 #\: signals a special sequence (can also be used to escape special characters)
 #Example 1:
 # import re
-# result = re.findall(r"\d", "order 66 and 501st")
+# result = re.findall(r"\d", "order 66 and 501st") #d-find digits 
 # print (result)
 
 #.: any single character except new line character 
@@ -53,7 +53,7 @@
 # result = re.search(r"(ab)+", "abababc")
 # print(result)
 
-#?: optional
+# #?: optional
 import re
-result = re.findall(r"ab?c", "abc bc ac ab") #can be ac, abc
+result = re.findall(r"ab?c", "abc bc ac ab") #a and c must be there 
 print(result)
