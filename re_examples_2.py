@@ -1,4 +1,4 @@
-1. regex: ab -> a immediately followed by bytearray
+1. regex: ab -> a immediately followed by b 
 2. regex: a|b -> either a or b or both 
 3. regex: a? -> 0 or 1 or multible a [? mark is called optional]
 4. regex: ab?c -> a and c are fixed/must (e.g. ac), b is optional and 0 or multiple b can be there but the position of b should be between a and c, e.g. abc.  
