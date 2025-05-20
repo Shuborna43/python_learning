@@ -46,6 +46,7 @@ text = '''
 
 def find_phones_with_area_code(start, end, text):
     pattern = "^"+str(start)+" ?[0-9 ]{5,7}"+str(end)+"$"
+    #pattern = "^"+str(start)+" ?[\d ?]{5,7}"+str(end)+"$"
     matches = re.finditer(pattern, text, re.M)
     for match in matches:
         print(match)
