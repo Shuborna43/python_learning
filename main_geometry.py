@@ -6,4 +6,4 @@ area = geometry.calculate_rectangle_area(length, width)
 
 
 
-print (f"Rectangle Dimensions:\nLength: {length} meters\nWidth: {width} meters\nPerimeter: {perimeter} meters\nArea: {area} square meters")
+print (f"Rectangle Dimensions:\nLength: {length} meters\nWidth: {width} meters\nPerimeter: {perimeter} meters\nArea:clear {area} square meters")

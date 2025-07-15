@@ -1,0 +1,100 @@
+Question:
+Write a Python program that consists of two files: geometry.py and main_geometry.py. The program should calculate and display the perimeter and area of a rectangle based on user input.
+In geometry.py, create the following functions with appropriate docstrings:
+
+
+get_length(): Prompts the user to enter the length of a rectangle (in meters) and returns it as a float.
+get_width(): Prompts the user to enter the width of a rectangle (in meters) and returns it as a float.
+calculate_rectangle_perimeter(length, width): Takes length and width as parameters and returns the perimeter of the rectangle (Perimeter = 2 * (length + width)).
+calculate_rectangle_area(length, width): Takes length and width as parameters and returns the area of the rectangle (Area = length * width).
+In main_geometry.py, import the geometry module and create a main() function that:
+
+
+Calls get_length() and get_width() to obtain user input.
+Calls calculate_rectangle_perimeter() and calculate_rectangle_area() with the user-provided values.
+Displays the results in the format:
+Rectangle Dimensions:
+Length: X meters
+Width: Y meters
+Perimeter: Z meters
+Area: W square meters
+
+
+
+
+
+
+Create two Python files in the Lab2 project:
+utilities.py
+main.py
+In utilities.py:
+Import the math module from the Python Standard Library.
+Implement four functions with proper DocStrings:
+calculate_circle_area(radius): Takes a radius as input and returns the area of a circle using the formula π * radius^2.
+calculate_sphere_volume(radius): Takes a radius as input and returns the volume of a sphere using the formula (4/3) * π * radius^3.
+calculate_BMI(): Prompts the user for weight (in kilograms) and height (in meters), then calculates and returns the Body Mass Index (BMI) using the formula weight / (height^2).
+calculate_hypotenuse(): Prompts the user for the lengths of two sides (A and B) of a right triangle and returns the hypotenuse using the math.hypot() function.
+In main.py:
+Import the utilities module.
+Create a main() function that:
+Prompts the user for the radius of a circle, calls calculate_circle_area(), and displays the result.
+Prompts the user for the radius of a sphere, calls calculate_sphere_volume(), and displays the result.
+Calls calculate_BMI() and displays the result.
+Calls calculate_hypotenuse() and displays the result.
+Ensure the output matches the provided format (as shown in the lab's expected output image).
+Enter the radius of the circle: 5
+Area of circle: 78.54
+Enter the radius of the sphere: 3
+Volume of sphere: 113.10
+Enter weight in kg: 70
+Enter height in meters: 1.75
+BMI: 22.86
+Enter length of side A: 3
+Enter length of side B: 4
+Hypotenuse: 5.00
+
+
+Question 03:
+Create a Python file in that project, named lab4.py
+In the lab4.py script, create the main() function as follows:
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
+
+
+
+Create another Python script, named login.py
+In this script, create the following functions:
+Function generate_password(), which takes three parameters: first name, last name, and Student ID, and which returns the default login password.
+The first and last names must be formatted properly by this function: i.e., the first character is upper case and the rest of the name is lowercase. If the function is called like this: generate_password("tiger", "woods", "s00123"), it creates new variables with values "Tiger" and "Woods".
+Refer to string formatting methods for guidance: https://www.geeksforgeeks.org/difference-between-str-capitalize-vs-str-title/
+The password is generated as follows:
+Get the first three letters from a properly-formatted first name; if the first name length is less than three characters, then the entire name will be used.
+Get the first three characters from a properly-formatted last name; if the last name length is less than three characters, then the entire last name will be used.
+Get the last three characters of the Student ID; if the Student ID length is less than three characters, then the entire ID will be used.
+Concatenate the characters generated from the above instructions as follows:
+(Characters from the first name + characters from the last name + characters from Student ID)
+Function change_password(): this function will repeatedly (i.e., in a loop) prompt the user to enter a new password. If the password meets the specifications, the loop terminates and the password is returned; otherwise, a message including the password specifications and a request to enter another password will be displayed, and the user will be prompted to enter another password until the rules are followed.
+The password specifications are as follows:
+The password must be at least seven characters long.
+The password must contain at least one uppercase character.
+The password must contain at least one lowercase character.
+The password must contain at least one digit.
+In lab4.py:
+Import the login.py module.
+In the main() function, prompt the user to enter their first name, last name, and Student ID.
+Create the default password by passing those values to the generate_password() function and display the result.
+Call the change_password() function to prompt the user to change the default password.
+Display the password generated by the change_password() function.
+HINT: Consider breaking down the validation of the password into separate functions such as has_upper(), has_lower(), has_digit(), etc. Use these functions in change_password().
+Sample Output:
+Enter your first name: Tiger
+Enter your last name: Woods
+Enter your Student ID: s00123
+Your default password is: TigWoo123
+Enter a new password: tiger
+Password must be at least 7 characters long, contain at least one uppercase letter, one lowercase letter, and one digit.
+Enter a new password: TigerWoods123
+Your new password is: TigerWoods123
