@@ -31,3 +31,35 @@ def generate_password(first_name, last_name, student_id):
 
   password = first_part + last_part + id_part
   return password
+
+
+def has_upper(password):
+    for char in password:
+        if char.isupper():
+           return True
+    return False  
+  
+def has_lower(password):
+    for char in password:
+        if char.islower():
+           return True
+    return False 
+  
+def has_digit(password):
+    for char in password:
+        if char.isdigit():
+           return True
+    return False 
+     
+def change_password():
+      while True:
+            password = input("Please enter your new password: ")
+            if (len(password) >= 7 and has_upper(password) and has_lower(password) and has_digit(password)):
+                return password
+            else:
+                print("Password must be at least 7 characters long, contain at least one uppercase letter, one lowercase letter, and one digit. Please try again.")
+
+
+
+
+

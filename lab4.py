@@ -7,5 +7,8 @@ def main():
  default_password = login.generate_password(first_name, last_name, student_ID)
  print("Your default password is: ", default_password)
 
+ new_password = login.change_password()
+ print(f"Your new password is: {new_password}") 
+
 if __name__ == "__main__":
     main()
