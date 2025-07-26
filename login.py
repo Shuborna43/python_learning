@@ -1,12 +1,4 @@
-def generate_password(first_name, last_name, student_id):
-   
-
-#   refirst_name = first_name.title()
-#   relast_name = last_name.title()
-#   n=len(student_id)
-#   password_format = refirst_name[0:3]+relast_name[0:3]+student_id[n-3:n]
-#   return password_format
-
+def generate_password(first_name, last_name, student_id): 
   formatted_first = first_name.strip().capitalize() #strip=it removes leading and trailing spaces
   formatted_last = last_name.strip().capitalize()
   formatted_ID = student_id.strip() 
