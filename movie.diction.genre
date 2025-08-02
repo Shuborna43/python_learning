@@ -1,0 +1,21 @@
+list_movies = [["Feluda", "Ditective", "Bangla"], ["Intern", "Family", "English"],["Iron_man", "Action", "English"],["Tare_Zamin_Par", "Education", "Hindi"],["Silsila", "Romantic", "Hindi"], ["Lion_king", "Kids", "Hindi"]]
+movies_data = {}
+for i in range (0,len(list_movies)):
+  movies_data[list_movies[i][1]] = [list_movies[i][0],list_movies[i][2]]
+print(movies_data)
+
+file_server = [["Feluda", "Ditective", "English"], ["Wonder_Women", "Action", "English"], ["Lion_king", "Kids", "English"],["Intern", "Comedy", "Hindi"]]
+
+updated_movies = {}
+
+for i in range (0,len(file_server)):
+  #if file_server[i][1] not in movies_data:
+     #updated_movies[file_server[i][1]] = [file_server[i][0],file_server[i][2]]
+  #if file_server[i][1] in movies_data and file_server[i][0] not in movies_data:
+     updated_movies = file_server[i][0]
+  if file_server[i][1] in movies_data and file_server[i][2] not in movies_data:
+     updated_movies = file_server[i][2]
+  else:
+     continue 
+
+print (updated_movies)
