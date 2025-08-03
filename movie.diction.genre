@@ -13,9 +13,9 @@ for i in range (0,len(file_server)):
      #updated_movies[file_server[i][1]] = [file_server[i][0],file_server[i][2]]
   #if file_server[i][1] in movies_data and file_server[i][0] not in movies_data:
      updated_movies = file_server[i][0]
-  if file_server[i][1] in movies_data and file_server[i][2] not in movies_data:
-     updated_movies = file_server[i][2]
-  else:
-     continue 
+   if file_server[i][1] in movies_data and file_server[i][2] not in movies_data:
+      updated_movies = file_server[i][2]
+   else:
+      continue 
 
 print (updated_movies)

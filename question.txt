@@ -200,10 +200,14 @@ get_number_of_capitals_containing(substring)
 Purpose: Counts how many capital cities contain the given substring (case-insensitive).
 Implementation: Iterates through the capitals tuple, checking if substring.lower() is in capital.lower() to ensure case-insensitive matching.
 Explanation: Converts both the capital and substring to lowercase to perform a case-insensitive search, incrementing a counter when the substring is found.
+
 get_countries_and_capitals_that_start_with_same_letter()
 Purpose: Returns a list of strings in the format "capital - country" where the capital and country start with the same letter (case-insensitive).
 Implementation: Iterates through countries_and_capitals, comparing the first letter of the country and capital (converted to lowercase). If they match, formats the pair as a string and adds it to the result list. 
 Explanation: Checks the first character of each country and capital for a case-insensitive match and formats the output as specified.
+
+
+
 get_capital_of(country)
 Purpose: Returns the capital of the given country (case-insensitive), or "no such country" if the country is not found.
 Implementation: Iterates through countries_and_capitals, comparing the country name (case-insensitive) with the input. Returns the corresponding capital or "no such country".
