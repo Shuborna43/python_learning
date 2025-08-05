@@ -5,104 +5,109 @@ countries = ('Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua 
 capitals = ('Kabul', 'Tirana (Tirane)', 'Algiers', 'Andorra la Vella', 'Luanda', "Saint John's", 'Buenos Aires', 'Yerevan', 'Canberra', 'Vienna', 'Baku', 'Nassau', 'Manama', 'Dhaka', 'Bridgetown', 'Minsk', 'Brussels', 'Belmopan', 'Porto Novo', 'Thimphu', 'Sucre', 'Sarajevo', 'Gaborone', 'Brasilia', 'Bandar Seri Begawan', 'Sofia', 'Ouagadougou', 'Gitega', 'Phnom Penh', 'Yaounde', 'Ottawa', 'Praia', 'Bangui', "N'Djamena", 'Santiago', 'Beijing', 'Bogota', 'Moroni', 'Kinshasa', 'Brazzaville', 'San Jose', 'Yamoussoukro', 'Zagreb', 'Havana', 'Nicosia', 'Prague', 'Copenhagen', 'Djibouti', 'Roseau', 'Santo Domingo', 'Dili', 'Quito', 'Cairo', 'San Salvador', 'London', 'Malabo', 'Asmara', 'Tallinn', 'Mbabana', 'Addis Ababa', 'Palikir', 'Suva', 'Helsinki', 'Paris', 'Libreville', 'Banjul', 'Tbilisi', 'Berlin', 'Accra', 'Athens', "Saint George's", 'Guatemala City', 'Conakry', 'Bissau', 'Georgetown', 'Port au Prince', 'Tegucigalpa', 'Budapest', 'Reykjavik', 'New Delhi', 'Jakarta', 'Tehran', 'Baghdad', 'Dublin', 'Jerusalem', 'Rome', 'Kingston', 'Tokyo', 'Amman', 'Nur-Sultan', 'Nairobi', 'Tarawa Atoll', 'Pristina', 'Kuwait City', 'Bishkek', 'Vientiane', 'Riga', 'Beirut', 'Maseru', 'Monrovia', 'Tripoli', 'Vaduz', 'Vilnius', 'Luxembourg', 'Antananarivo', 'Lilongwe', 'Kuala Lumpur', 'Male', 'Bamako', 'Valletta', 'Majuro', 'Nouakchott', 'Port Louis', 'Mexico City', 'Chisinau', 'Monaco', 'Ulaanbaatar', 'Podgorica', 'Rabat', 'Maputo', 'Nay Pyi Taw', 'Windhoek', 'No official capital', 'Kathmandu', 'Amsterdam', 'Wellington', 'Managua', 'Niamey', 'Abuja', 'Pyongyang', 'Skopje', 'Belfast', 'Oslo', 'Muscat', 'Islamabad', 'Melekeok', 'Panama City', 'Port Moresby', 'Asuncion', 'Lima', 'Manila', 'Warsaw', 'Lisbon', 'Doha', 'Bucharest', 'Moscow', 'Kigali', 'Basseterre', 'Castries', 'Kingstown', 'Apia', 'San Marino', 'Sao Tome', 'Riyadh', 'Edinburgh', 'Dakar', 'Belgrade', 'Victoria', 'Freetown', 'Singapore', 'Bratislava', 'Ljubljana', 'Honiara', 'Mogadishu', 'Pretoria, Bloemfontein, Cape Town', 'Seoul', 'Juba', 'Madrid', 'Colombo', 'Khartoum', 'Paramaribo', 'Stockholm', 'Bern', 'Damascus', 'Taipei', 'Dushanbe', 'Dodoma', 'Bangkok', 'Lome', "Nuku'alofa", 'Port of Spain', 'Tunis', 'Ankara', 'Ashgabat', 'Funafuti', 'Kampala', 'Kiev', 'Abu Dhabi', 'London', 'Washington D.C.', 'Montevideo', 'Tashkent', 'Port Vila', 'Vatican City', 'Caracas', 'Hanoi', 'Cardiff', "Sana'a", 'Lusaka', 'Harare')
 
 
-def how_many_countries():
- number_country = len(countries)
- return number_country
+# def how_many_countries():
+#  number_country = len(countries)
+#  return number_country
 
-print(how_many_countries())
-
-
-
-
-def get_name_of_longest_country():
-    longest_country = " "
-    maximum_length = 0
-    for country in countries:
-        if len(country) > maximum_length:
-            maximum_length = len(country)
-            longest_country = country
-    return longest_country
-
-print(get_name_of_longest_country())
+# print(how_many_countries())
 
 
 
-def get_number_of_capitals_containing(substring):
-    count = 0
-    for capital in capitals:
-        if substring.lower() in capital.lower():
-            count += 1
-    return count
 
-print(get_number_of_capitals_containing("e"))  # Example usage, counting capitals containing 'a'
+# def get_name_of_longest_country():
+#     longest_country = " "
+#     maximum_length = 0
+#     for country in countries:
+#         if len(country) > maximum_length:
+#             maximum_length = len(country)
+#             longest_country = country
+#     return longest_country
 
-def get_number_of_capitals_containing(substring):
-    count = 0
-    for capital in capitals:
-        if substring.lower() in capital.lower():
-            count += 1
-    return count
-print(get_number_of_capitals_containing("z")) 
+# print(get_name_of_longest_country())
 
 
 
-def get_number_of_capitals_containing(substring):
-    count = 0
-    for capital in capitals:
-        if substring.lower() in capital.lower():
-            count += 1
-    return count
+# def get_number_of_capitals_containing(substring):
+#     count = 0
+#     for capital in capitals:
+#         if substring.lower() in capital.lower():
+#             count += 1
+#     return count
 
-print(get_number_of_capitals_containing("'"))
-print(get_number_of_capitals_containing('an'))
+# print(get_number_of_capitals_containing("e"))  # Example usage, counting capitals containing 'a'
+
+# def get_number_of_capitals_containing(substring):
+#     count = 0
+#     for capital in capitals:
+#         if substring.lower() in capital.lower():
+#             count += 1
+#     return count
+# print(get_number_of_capitals_containing("z")) 
 
 
-def get_countries_and_capitals_that_start_with_same_letter():
-   result = []
-   for country, capital in countries_and_capitals:
-       if country[0].lower() == capital[0].lower():
-          result.append(f"{capital} - {country}")
-   return result
 
-print (get_countries_and_capitals_that_start_with_same_letter())
+# def get_number_of_capitals_containing(substring):
+#     count = 0
+#     for capital in capitals:
+#         if substring.lower() in capital.lower():
+#             count += 1
+#     return count
+
+# print(get_number_of_capitals_containing("'"))
+# print(get_number_of_capitals_containing('an'))
+
+
+# def get_countries_and_capitals_that_start_with_same_letter():
+#    result = []
+#    for country, capital in countries_and_capitals:
+#        if country[0].lower() == capital[0].lower():
+#           result.append(f"{capital} - {country}")
+#    return result
+
+# print (get_countries_and_capitals_that_start_with_same_letter())
 
        
 
-def get_capital_of(my_country):# must use the countries_and_capitals list
-     for country,capital in countries_and_capitals:
-        if country.upper() == my_country.upper():
-            return capital
-        else:
-            return "no such country"
+# def get_capital_of(my_country):# must use the countries_and_capitals list
+#      for country,capital in countries_and_capitals:
+#         if country.upper() == my_country.upper():
+#             return capital
+#         else:
+#             return "no such country"
 
-print(get_capital_of('port moresby')) # must use the countries_and_capitals list        
+# print(get_capital_of('port moresby')) # must use the countries_and_capitals list        
 
 
-def get_list_of_countries_with_this_many_letters_in_name(num_letters):
-    country_list = []
-    for country in countries:
-        if len(country) == num_letters:
-            country_list.append(country)
-    return country_list 
+# def get_list_of_countries_with_this_many_letters_in_name(num_letters):
+#     country_list = []
+#     for country in countries:
+#         if len(country) == num_letters:
+#             country_list.append(country)
+#     return country_list 
 
-print (get_list_of_countries_with_this_many_letters_in_name(10))
+# print (get_list_of_countries_with_this_many_letters_in_name(10))
          
 
-def get_capitals_and_countries_that_begin_and_end_with_same_letter():
-   list = []
+# def get_capitals_and_countries_that_begin_and_end_with_same_letter():
+#    list = []
    
-   for country,capital in countries_and_capitals:
-       if country[0].lower() == country[-1].lower():
-          list.append(country)
-       if capital[0].lower() == capital[-1].lower():
-          list.append(capital)
-   return list
+#    for country,capital in countries_and_capitals:
+#        if country[0].lower() == country[-1].lower():
+#           list.append(country)
+#        if capital[0].lower() == capital[-1].lower():
+#           list.append(capital)
+#    return list
 
-print (get_capitals_and_countries_that_begin_and_end_with_same_letter())
+# print (get_capitals_and_countries_that_begin_and_end_with_same_letter())
 
 
 
-# get_capitals_and_countries_that_begin_and_end_with_same_letter()
-# Purpose: Returns a list of countries and capitals where the name starts and ends with the same letter (case-insensitive).
-# Implementation: Iterates through countries_and_capitals. For each country and capital, checks if the first and last letters are the same (case-insensitive). Adds matching countries and capitals to a single list.
-# Explanation: Checks both country and capital names for matching first and last letters, adding them to the result list.
+def countries_in_reverse_alphabetical_order():
+    for country in countries:
+       return sorted(countries, reverse=True)  
+print(countries_in_reverse_alphabetical_order())
+
+
+
+
+
