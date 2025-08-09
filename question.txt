@@ -305,3 +305,25 @@ print_countries_in_reverse_alphabetical_order()
 ('Zimbabwe', 'Zambia', 'Yemen', 'Wales', 'Vietnam', 'Venezuela', 'Vatican City', 'Vanuatu', 'Uzbekistan', 'Uruguay', 'United States', 'United Kingdom', 'United Arab Emirates', 'Ukraine', 'Uganda', 'Tuvalu', 'Turkmenistan', 'Turkey', 'Tunisia', 'Trinidad and Tobago', 'Tonga', 'Togo', 'Thailand', 'Tanzania', 'Tajikistan', 'Taiwan', 'Syria', 'Switzerland', 'Sweden', 'Suriname', 'Sudan', 'Sri Lanka', 'Spain', 'South Sudan', 'South Korea', 'South Africa', 'Somalia', 'Solomon Islands', 'Slovenia', 'Slovakia', 'Singapore', 'Sierra Leone', 'Seychelles', 'Serbia', 'Senegal', 'Scotland', 'Saudi Arabia', 'Sao Tome and Principe', 'San Marino', 'Samoa', 'Saint Vincent and the Grenadines', 'Saint Lucia', 'Saint Kitts and Nevis', 'Rwanda', 'Russia', 'Romania', 'Qatar', 'Portugal', 'Poland', 'Philippines', 'Peru', 'Paraguay', 'Papua New Guinea', 'Panama', 'Palau', 'Pakistan', 'Oman', 'Norway', 'Northern Ireland', 'North Macedonia (Macedonia)', 'North Korea', 'Nigeria', 'Niger', 'Nicaragua', 'New Zealand', 'Netherlands', 'Nepal', 'Nauru', 'Namibia', 'Myanmar (Burma)', 'Mozambique', 'Morocco', 'Montenegro', 'Mongolia', 'Monaco', 'Moldova', 'Mexico', 'Mauritius', 'Mauritania', 'Marshall Islands', 'Malta', 'Mali', 'Maldives', 'Malaysia', 'Malawi', 'Madagascar', 'Luxembourg', 'Lithuania', 'Liechtenstein', 'Libya', 'Liberia', 'Lesotho', 'Lebanon', 'Latvia', 'Laos', 'Kyrgyzstan', 'Kuwait', 'Kosovo', 'Kiribati', 'Kenya', 'Kazakhstan', 'Jordan', 'Japan', 'Jamaica', 'Italy', 'Israel', 'Ireland', 'Iraq', 'Iran', 'Indonesia', 'India', 'Iceland', 'Hungary', 'Honduras', 'Haiti', 'Guyana', 'Guinea-Bissau', 'Guinea', 'Guatemala', 'Grenada', 'Greece', 'Ghana', 'Germany', 'Georgia', 'Gambia', 'Gabon', 'France', 'Finland', 'Fiji', 'Federated States of Micronesia', 'Ethiopia', 'Eswatini (Swaziland)', 'Estonia', 'Eritrea', 'Equatorial Guinea', 'England', 'El Salvador', 'Egypt', 'Ecuador', 'East Timor', 'Dominican Republic', 'Dominica', 'Djibouti', 'Denmark', 'Czech Republic (Czechia)', 'Cyprus', 'Cuba', 'Croatia', "CÃ´te d'Ivoire (Ivory Coast)", 'Costa Rica', 'Congo, Republic of the', 'Congo, Democratic Republic of the', 'Comoros', 'Colombia', 'China', 'Chile', 'Chad', 'Central African Republic', 'Cape Verde', 'Canada', 'Cameroon', 'Cambodia', 'Burundi', 'Burkina Faso', 'Bulgaria', 'Brunei', 'Brazil', 'Botswana', 'Bosnia and Herzegovina', 'Bolivia', 'Bhutan', 'Benin', 'Belize', 'Belgium', 'Belarus', 'Barbados', 'Bangladesh', 'Bahrain', 'Bahamas', 'Azerbaijan', 'Austria', 'Australia', 'Armenia', 'Argentina', 'Antigua and Barbuda', 'Angola', 'Andorra', 'Algeria', 'Albania', 'Afghanistan')
  
 
+
+
+Question 06 :
+
+The task is to create a Python script named number_work.py for a project. Create a function get_square_numbers_between(first, last):
+Returns a list of all square numbers between (and including) the parameters first and last.
+Include a proper DocString.
+Examples:
+get_square_numbers_between(30, 222) → [36, 49, 64, 81, 100, 121, 144, 169, 196]
+get_square_numbers_between(500, 611) → [529, 576]
+Create a function process_user_input():
+Repeatedly asks the user to enter numbers (or 0 to quit) using a while loop.
+Stores the integer version of each input in a list.
+After the user enters 0, calculates and prints:
+Smallest number
+Largest number
+Sum of all numbers
+Average of all numbers
+Use loops to calculate these statistics (do not use Python’s built-in functions like min(), max(), etc.).
+Include a proper DocString.
+Call both functions from main().
+
