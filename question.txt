@@ -327,3 +327,59 @@ Use loops to calculate these statistics (do not use Python’s built-in function
 Include a proper DocString.
 Call both functions from main().
 
+
+
+Question 07 :
+Step 1: Understanding the Task
+The main tasks are:
+Create a dictionary sports_leagues with specific keys (3-letter abbreviations) and values (full league descriptions).
+
+Implement a function delete_league() that takes a league key as input (based on the examples, it accepts a parameter rather than prompting, despite the description; this allows for testable calls like delete_league("aBc")). It should handle case-insensitivity for lookup (e.g., "nHl" matches "NHL"), delete the entry if it exists, and print appropriate messages.
+
+Implement a function add_league() that prompts the user for a new key and value, adds them to the dictionary if the key doesn't exist (normalizing to uppercase for consistency), and prints an error if it does.
+
+Implement get_abbreviations() to return a list of all keys.
+
+Implement get_league_descriptions() to return a tuple of all values.
+
+Implement get_league_abbreviations_and_descriptions() to return a set containing all keys and values combined.
+
+The dictionary must be accessible globally within functions.
+
+Note: The instructions mention working with a partner and adding names in comments, but since this is a solo solution, I'll add placeholder comments.
+
+The examples suggest case-insensitive handling for deletion, so I'll apply similar logic across functions for consistency (normalizing keys to uppercase, as all given keys are uppercase).
+
+Step 2: Planning the Code Structure
+Define the dictionary at the top level.
+Use global sports_leagues inside functions to modify/access it.
+For delete_league(key):
+Take the key as a string parameter.
+Normalize to uppercase for lookup.
+If the uppercase key exists, retrieve the value, pop the entry, and print the removal message using the value.
+If not, print the "no league" message using the original (mixed-case) key.
+
+For add_league():
+No parameters; prompt for key and value.
+Normalize the key to uppercase.
+Check if it exists; if yes, print error with the existing key (uppercase) and value.
+If not, add it.
+
+For the getter functions:
+Simply return the requested data structures (list, tuple, set).
+
+# Define the global dictionary
+sports_leagues = {
+"NFL": "National Football League (American football)",
+"MLB": "Major League Baseball (Baseball)",
+"NBA": "National Basketball Association (Basketball)",
+"EPL": "Premier League (Association football)",
+"NHL": "National Hockey League (Ice hockey)",
+"MLS": "Major League Soccer (Association football)",
+"IPL": "Indian Premier League (Twenty20 cricket)",
+"AFL": "Australian Football League (Australian rules football)",
+"NRL": "National Rugby League (Rugby league football)",
+"CFL": "Canadian Football League (Canadian football)"
+}
+
+
