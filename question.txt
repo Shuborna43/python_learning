@@ -404,3 +404,20 @@ print_file_data(): Re-open the file "matching_countries.txt". Use readlines() to
 From the main part of the code, call these functions in order: get_countries("an"), get_capitals("os"), and print_file_data().
 
 
+Quiz Game Project
+Create a Python program that implements a simple quiz game similar to the one below. Your task is to code to meet the following requirements:
+
+
+The program should include a function called ask_question that takes a question and a correct answer as parameters, asks the user for input, and returns True if the answer is correct (case-insensitive) and False otherwise.
+Use a list of tuples to store at least 5 questions, where each tuple contains a question string (with multiple-choice options) and the correct answer (a single character like "a", "b", or "c").
+Initialize a variable to keep track of the score.
+Use a for loop to iterate through the questions, calling the ask_question function for each one. If the answer is correct, increase the score by 1 and print "Correct!", otherwise print "Wrong! The answer was" followed by the correct answer.
+After all questions are asked, print a message showing the final score out of the total number of questions.
+
+
+
+("What is a variable used for? (a) Performing calculations b) Storing data c) Creating loops", "b"),
+("Which data type holds an ordered sequence? (a) Dictionary b) List c) Set", "b"),
+("What controls the flow of a program? (a) Branching logic b) Functions c) Strings", "a"),
+("Which structure stores unique items only? (a) List b) Set c) String", "b"),
+("What is used to handle errors in code? (a) Debugging b) Variables c) Modules", "a")

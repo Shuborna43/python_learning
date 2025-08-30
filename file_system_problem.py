@@ -44,4 +44,3 @@ print_file_data()
 
 
 
-# print_file_data(): Re-open the file "matching_countries.txt". Use readlines() to read the file, loop through the lines, and print each line to the screen.
