@@ -421,3 +421,150 @@ After all questions are asked, print a message showing the final score out of th
 ("What controls the flow of a program? (a) Branching logic b) Functions c) Strings", "a"),
 ("Which structure stores unique items only? (a) List b) Set c) String", "b"),
 ("What is used to handle errors in code? (a) Debugging b) Variables c) Modules", "a")
+
+
+
+
+
+Expense Tracker Project :
+
+
+Requirements and Instructions
+Create a Python program that meets the following specifications. The program should be divided into distinct parts: setup/file handling, expense management/validation, and the main program loop. Below are the detailed requirements for each part, including the functions, their purposes, parameters, and behavior.
+
+Part 1: Setup, Imports, Constants, and File Handling
+Objective: Set up the program with necessary imports, constants, and functions to load and save expenses from/to a text file.
+Imports and Constants:
+Import the os module to check if the file exists.
+Import the re module for regular expression validation of amounts.
+Define a constant DATA_FILE with the value "expenses.txt" to specify the file where expenses will be stored.
+Define a constant CATEGORIES as a set containing the allowed categories: "food", "transport", and "fun".
+Create a global list called expenses to store expense dictionaries in memory. Each expense dictionary should have three keys: "description" (string), "amount" (float), and "category" (string).
+Function: load_expenses()
+Purpose: Read expenses from expenses.txt and populate the global expenses list.
+Parameters: None.
+Behavior:
+Check if DATA_FILE exists using os.path.exists().
+If the file exists, open it in read mode ('r').
+Read each line, strip whitespace, and split by commas to extract description, amount, and category.
+If a line has exactly three parts, create a dictionary with:
+"description": First part (string).
+"amount": Second part converted to a float.
+"category": Third part (string).
+Append the dictionary to the expenses list.
+Handle errors (e.g., file reading issues) by catching exceptions and printing an error message like "Error reading file: {error}".
+If the file doesn’t exist, do nothing (the expenses list remains empty).
+Function: save_expenses()
+Purpose: Save the global expenses list to expenses.txt.
+Parameters: None.
+Behavior:
+Open DATA_FILE in write mode ('w').
+For each expense dictionary in the expenses list, write a line in the format: description,amount,category\n.
+Handle errors (e.g., file writing issues) by catching exceptions and printing an error message like "Error saving file: {error}".
+
+Part 2: Input Validation and Expense Management
+Objective: Implement functions to validate user input and manage expenses (adding and displaying them).
+Function: check_amount(amount_str)
+Purpose: Validate that the input string represents a valid amount (e.g., "10", "10.50", or "5.0").
+Parameters:
+amount_str: A string representing the amount entered by the user.
+Behavior:
+Use a regular expression (re.match()) to check if amount_str matches the pattern for a number with up to two decimal places (e.g., r'^\d+(\.\d{1,2})?$').
+If valid, convert the string to a float and return it.
+If invalid, return None.
+Function: add_expense(description, amount, category)
+Purpose: Add a new expense to the expenses list and save it to the file.
+Parameters:
+description: A string describing the expense (e.g., "Lunch").
+amount: A float representing the expense amount (e.g., 10.50).
+category: A string representing the expense category (e.g., "food").
+Behavior:
+Validate inputs:
+If description is empty (after stripping whitespace), raise a ValueError with the message "Description cannot be empty".
+If category is not in CATEGORIES, raise a ValueError with the message "Invalid category".
+If amount is less than or equal to 0, raise a ValueError with the message "Amount must be positive".
+Create a dictionary with keys "description", "amount", and "category" using the provided values.
+Append the dictionary to the global expenses list.
+Call save_expenses() to save the updated list to the file.
+Print "Expense added!" to confirm success.
+Function: show_expenses()
+Purpose: Display all expenses in the expenses list.
+Parameters: None.
+Behavior:
+If the expenses list is empty, print "No expenses yet." and return.
+Otherwise, print "Your Expenses:".
+For each expense in the expenses list, print a numbered line in the format: 1. description - $amount (category), where:
+The number starts at 1 (use index + 1).
+amount is formatted to two decimal places (e.g., 10.50).
+Example: 1. Lunch - $10.50 (food).
+
+Part 3: Main Program Loop and Entry Point
+Objective: Create an interactive command-line interface to let users add expenses, view expenses, or exit the program.
+Function: main()
+Purpose: Run the expense tracker program with a menu-driven interface.
+Parameters: None.
+Behavior:
+Call load_expenses() to initialize the expenses list from the file.
+Enter a loop that:
+Prints a menu: "Expense Tracker", followed by options:
+1. Add Expense
+2. Show Expenses
+3. Exit
+Prompts the user with "Choose (1-3): " and reads their input.
+Handle user choices:
+If choice is "1":
+Prompt for "Description: " and strip whitespace from the input.
+Prompt for "Amount (e.g., 10.50): " and pass it to check_amount().
+If check_amount() returns None, print "Invalid amount. Use a format like 10 or 10.50" and continue the loop.
+Prompt for "Category (food, transport, fun): " and convert to lowercase.
+Call add_expense(description, amount, category) inside a try-except block.
+Catch ValueError and print the error message (e.g., "Error: Description cannot be empty").
+Catch any other exceptions and print "Unexpected error: {error}".
+If choice is "2":
+Call show_expenses().
+If choice is "3":
+Print "Goodbye!" and break the loop to exit.
+For any other input, print "Choose 1, 2, or 3." and continue the loop.
+Entry Point:
+Use the standard Python idiom if __name__ == "__main__": to call main() when the script is run directly.
+
+
+
+
+
+Output Snippet
+
+Expense Tracker
+1. Add Expense
+2. Show Expenses
+3. Exit
+Choose (1-3): 1
+Description: Lunch
+Amount (e.g., 10.50): 10.50
+Category (food, transport, fun): food
+Expense added!
+
+Expense Tracker
+1. Add Expense
+2. Show Expenses
+3. Exit
+Choose (1-3): 2
+Your Expenses:
+1. Lunch - $10.50 (food)
+
+Expense Tracker
+1. Add Expense
+2. Show Expenses
+3. Exit
+Choose (1-3): 1
+Description: 
+Amount (e.g., 10.50): 20
+Category (food, transport, fun): fun
+Error: Description cannot be empty
+
+Expense Tracker
+1. Add Expense
+2. Show Expenses
+3. Exit
+Choose (1-3): 3
+Goodbye!
