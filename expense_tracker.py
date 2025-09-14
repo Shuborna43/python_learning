@@ -1,5 +1,70 @@
+import os
+import re
+
+DATA_FILE = "expenses.txt"
+CATEGORIS = ("food", "transport", "fun")
+expenses = []
+
+def load_expenses():
+    global expenses
+
+    if os.path.exists(DATA_FILE):
+        try:
+            with open(DATA_FILE,"r") as file:
+                for line in file:
+                    parts = line.strip().split(",")    #if it gets "," it will split the line
+                    print("# ,#, #", parts)
+                    if len(parts) == 3:
+                        expenses.append({
+                            "description": parts[0],
+                            "amount": parts[1],  
+                            "category":  parts[2] 
+                        })
+                        print("&,&,&", expenses)
+        except Exception as e:
+            print(f"error reading file: {e}") 
+
+   
+# def show_expenses():
+#     if not expenses:
+#         print("no expenses yet")
+#         return
+#     print("\nyour expenses: ")
+
+
+def save_expenses():
+    try:
+        with open(DATA_FILE,"w") as file:
+            for expense in expenses:
+                file.write(f"{expense["description"]},{expense["amount"]},{expense["category"]}\n")
+
+    except Exception as e:
+        print(f"error saving file: {e}") 
+
+
+
+def add_expense(description, amount, category):
+    if not description:
+        raise ValueError("Description cannot be empty")
+    if category not in CATEGORIES:
+        raise ValueError("Invalid category")
+    if amount <= 0:
+        raise ValueError("IAmount must be positive")
+
+    
+    expense = {
+        "description": description,
+        "amount": amount,  
+        "category":  category 
+        }
+
+    expenses.append(expense)
+
+    save_expenses()
+
+
 def main():
-    # load_expenses()
+    load_expenses()
     while True:
         print("\nExpense Tracker")
         print("1. Add Expense")
@@ -18,9 +83,16 @@ def main():
                     print("invalid amount. use format like 10 or 10.50")
                     continue 
 
-                # add_expense(description, amount, category)
+                add_expense(description, amount, category)
+
             except ValueError as e:
                 print(f"Error:{e}")
+
+
+
+
+
+
 
             except Exception as e:
                 print(f"Exception error:{e}")
