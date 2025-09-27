@@ -2,19 +2,13 @@ import os
 import re
 
 
-
-
 DATA_FILE = "expenses.txt"
 CATEGORIES = {"food", "transport", "fun"}
 expenses = []
 
 
-
-
 def load_expenses():
    global expenses
-
-
 
 
    if os.path.exists(DATA_FILE):
@@ -35,6 +29,8 @@ def load_expenses():
 
 
 
+
+
 def save_expenses():
    try:
        with open(DATA_FILE,"w") as file:
@@ -45,15 +41,13 @@ def save_expenses():
    except Exception as e:
        print(f"error saving file: {e}")
 
-
-
 def add_expense(description, amount, category):
    if not description:
        raise ValueError("Description cannot be empty")
    if category not in CATEGORIES:
        raise ValueError("Invalid category")
    if amount <= 0:
-       raise ValueError("IAmount must be positive")
+       raise ValueError("Amount must be positive")
 
 
    expense = {
@@ -65,14 +59,11 @@ def add_expense(description, amount, category):
    save_expenses()
 
 
-
-
 def check_amount(amount_str):
    if re.match(r"^\d+(\.\d{1,2})?$",amount_str):
        return float(amount_str)
    return None
      
-
 
 def show_expenses():
    if not expenses:
@@ -85,7 +76,6 @@ def show_expenses():
        print(f"{i+1}. {exp['description']} - ${float(exp['amount']):.2f} ({exp['category']})")
 
 
- 
 def main():
    load_expenses()
    while True:
@@ -96,15 +86,11 @@ def main():
        choice = input("Choose (1-3): ")  
 
 
-
-
        if choice == "1":
            try:
                description = input("Description: ").strip()
                amount_str = input("Amount(e.g., 10.50): ")
                category = input("Category(food, transport, fun): ").lower()
-
-
 
 
                amount = check_amount( amount_str)
@@ -113,38 +99,20 @@ def main():
                    continue
 
 
-
-
                add_expense(description, amount, category)
-
-
 
 
            except ValueError as e:
                print(f"Error:{e}")
 
 
-
-
-
-
-
-
            except Exception as e:
                print(f"Exception error:{e}")
-
-
-
-
-
-
 
 
        elif choice == "2":
            show_expenses()
            print("show expense")
-
-
 
 
        elif choice == "3":
@@ -155,13 +123,7 @@ def main():
            print("choose 1,2 or 3")
 
 
-
-
-
-
-
-
-if __name__ == "__main__":
+if __name__ == "__main__": #gaurd
    main()
 
 
