@@ -30,18 +30,88 @@
 
 # Example: 
 # define a class:
+# class Dog:
+#     sound_1 = "Bark"  #class attribute 
+#     color_1 = "black"
+#     sound_2 = "Ghew"
+#     color_2 = "white"
+#     sound_3 = "Mew"
+#     color_3 = "brown"
+
+# dog_1 = Dog() #object creation 
+# dog_2 = Dog()
+# dog_3 = Dog()
+
+# print(dog_1.sound_1, dog_1.color_1, dog_2.sound_2, dog_2.color_2, dog_3.sound_3, dog_3.color_3) #accessing the class 
+
+
+# string (str) method: 
+
+# class Dog:
+#     def __init__(self,name,age): #the whole init function is a construtor
+#         self.name = name 
+#         self.age = age
+
+#     def __str__(self):
+#         return f"{self.name} is {self.age} years old"
+
+# dog_1 = Dog("Tomy", 3)
+# dog_2 = Dog("Lassy", 2)
+
+# # print(dog_1)
+# # print(dog_2)
+# print(f"{dog_1}\n{dog_2}")
+
+
+#self parameter: self parameter is a refrence to the current instance of the class. It allows us to acces atributes and methods of the object. 
+
+# class Dog:
+#     species = "Canine" #class level atribute 
+
+#     def __init__(self,name,age): #the whole init function is a construtor
+#         self.name = name #instance atribute/ variable
+#         self.age = age #instance atribute/ variable
+        
+
+#     # def __str__(self):
+#     #     return f"{self.name} is {self.age} years old"
+
+# dog_1 = Dog("Tomy", 3) #dog_1, dog_2 are objects
+# dog_2 = Dog("Lassy", 2) 
+
+# print(dog_1.name, dog_1.age, dog_1.species)
+# print(dog_2.name, dog_2.age, dog_2.species)
+
+
+# __init__(): 
+# 1. __init__() method is the constructor in python which automatically called when a new object is created. It initializes the attributes of the class.  
+
+# Basic diffrence between class variables and instance variables:
+# Class Variables: ther are shared across all instances of a class. it is defined at the class level outside any methods. All objcets of the class share the same value for a class variables unless, explicitly overridden in an object. 
+# Instanc variables: variables that are unique to each instance(object) of a class. These are defined within the __init__() or other instance methods. Each object maintains its own copy of instance variables, independent of other objects.  
+
 class Dog:
-    sound_1 = "Bark"  #class attribute 
-    color_1 = "black"
-    sound_2 = "Ghew"
-    color_2 = "white"
-    sound_3 = "Mew"
-    color_3 = "brown"
+    species = "Canine" #class level atribute 
 
-dog_1 = Dog() #object creation 
-dog_2 = Dog()
-dog_3 = Dog()
+    def __init__(self,name,age): #the whole init function is a construtor
+        self.name = name #instance atribute/ variable
+        self.age = age #instance atribute/ variable
+        
 
-print(dog_1.sound_1, dog_1.color_1, dog_2.sound_2, dog_2.color_2, dog_3.sound_3, dog_3.color_3) #accessing the class 
+    # def __str__(self):
+    #     return f"{self.name} is {self.age} years old"
+#create objects:
+dog_1 = Dog("Tomy", 3) #create objects: dog_1, dog_2 are objects
+dog_2 = Dog("Lassy", 2) 
 
+#Access class and instance variables:
+print(dog_1.species) #class variable
+print(dog_1.name, dog_2.name) #instance variable 
 
+#modify instance variables:
+dog_1.name = "Max"
+print(dog_1.name)
+#modify class variables:
+Dog.species = "Feline"
+print(dog_1.species)
+print(dog_2.species)
