@@ -14,7 +14,7 @@
 # Encapsulation: Supports encapsulation to group data and methods together. 
 # Inheritance: Enables inheritance for reusability and hierarchy. 
 # Polymorphism: Allows polymorphism for flexible method implementation. 
-# Improves Modulariry, Scalability and Maitainability.  
+# Improves Modularity, Scalability and Maitainability.  
 
 # Characteristics of OOP:
 # Class, Object, Encapsulation, Polymorphism, Inheritance, Abstruction 
@@ -25,7 +25,6 @@
 # 3. Attributs are always public and can be accessed using "."
 
 # Object: An object in a specific instance of a class. It holds its own set of data (instance variables) and can invoke methods defined by its class. Multiple objects can be created from the same class, each with its own unique atrributes. 
-#1.
 
 
 # Example: 
@@ -48,11 +47,11 @@
 # string (str) method: 
 
 # class Dog:
-#     def __init__(self,name,age): #the whole init function is a construtor
+#     def __init__(self,name,age):          #the whole init function is a construtor
 #         self.name = name 
 #         self.age = age
 
-#     def __str__(self):
+#     def __str__(self):            #builtin method of parent class
 #         return f"{self.name} is {self.age} years old"
 
 # dog_1 = Dog("Tomy", 3)
@@ -90,28 +89,93 @@
 # Class Variables: ther are shared across all instances of a class. it is defined at the class level outside any methods. All objcets of the class share the same value for a class variables unless, explicitly overridden in an object. 
 # Instanc variables: variables that are unique to each instance(object) of a class. These are defined within the __init__() or other instance methods. Each object maintains its own copy of instance variables, independent of other objects.  
 
-class Dog:
-    species = "Canine" #class level atribute 
+# class Dog:
+#     species = "Canine" #class level atribute 
 
-    def __init__(self,name,age): #the whole init function is a construtor
-        self.name = name #instance atribute/ variable
-        self.age = age #instance atribute/ variable
+#     def __init__(self,name,age): #the whole init function is a construtor
+#         self.name = name #instance atribute/ variable
+#         self.age = age #instance atribute/ variable
         
 
     # def __str__(self):
     #     return f"{self.name} is {self.age} years old"
 #create objects:
-dog_1 = Dog("Tomy", 3) #create objects: dog_1, dog_2 are objects
-dog_2 = Dog("Lassy", 2) 
+# dog_1 = Dog("Tomy", 3) #create objects: dog_1, dog_2 are objects
+# dog_2 = Dog("Lassy", 2) 
 
-#Access class and instance variables:
-print(dog_1.species) #class variable
-print(dog_1.name, dog_2.name) #instance variable 
+# #Access class and instance variables:
+# print(dog_1.species) #class variable
+# print(dog_1.name, dog_2.name) #instance variable 
 
-#modify instance variables:
-dog_1.name = "Max"
-print(dog_1.name)
-#modify class variables:
-Dog.species = "Feline"
-print(dog_1.species)
-print(dog_2.species)
+# #modify instance variables:
+# dog_1.name = "Max"
+# print(dog_1.name)
+# #modify class variables:
+# Dog.species = "Feline"
+# print(dog_1.species)
+# print(dog_2.species)
+
+
+
+#Inheritance:
+# --------------
+#Inheritance allows a class(child class) to acquire properties (attributes) and methods of another class (parent class). We use inheritance for:
+# Code reusability
+# Real world hierarchy
+# Simplified maintenance 
+# Method overriding  
+
+
+# super():  
+# parent class: Animal 
+
+# class Animal:
+#     def __init__(self,name):
+#         self.name = name
+
+#     def info(self): #method of parent class
+#         print("animal name:", self.name) 
+
+# # child class: Dog
+# class Dog(Animal):
+#     def __init__(self,name,breed):
+#         super().__init__(name) #calling the parent constructor 
+#         self.breed = breed
+
+#     def details(self): #method of child class
+#         print(self.name, "is a", self.breed)
+
+# #object creation
+# d1 = Dog("Tomy", "Gloder retreaver")
+# d1.info()
+# d1.details()
+
+
+
+#problem: parent class: vehicle, child class: car
+class Vehicle:
+    def __init__(self,brand,model):
+        self.brand = brand
+        self.model = model
+
+    def info(self):
+        print("Brand of the car is: ", self.brand, "and model is: ", self.model)
+
+
+
+class Car(Vehicle):
+    def __init__(self,brand,model,fuel):
+        super().__init__(brand,model)
+        self.fuel = fuel
+
+    def details(self):
+        print(self.model, "of", self.brand, "runs by", self.fuel)
+
+c1 = Car("Toyota", "Allion", "Octane")
+c1.info()
+c1.details()
+
+
+
+
+
