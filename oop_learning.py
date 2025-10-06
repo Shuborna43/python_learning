@@ -62,7 +62,7 @@
 # print(f"{dog_1}\n{dog_2}")
 
 
-#self parameter: self parameter is a refrence to the current instance of the class. It allows us to acces atributes and methods of the object. 
+#self parameter: self parameter is a refrence to the current instance of the class. It allows us to access atributes and methods of the object. 
 
 # class Dog:
 #     species = "Canine" #class level atribute 
@@ -153,27 +153,95 @@
 
 
 #problem: parent class: vehicle, child class: car
-class Vehicle:
-    def __init__(self,brand,model):
-        self.brand = brand
-        self.model = model
+# class Vehicle:
+#     def __init__(self,brand,model):
+#         self.brand = brand
+#         self.model = model
 
-    def info(self):
-        print("Brand of the car is: ", self.brand, "and model is: ", self.model)
+#     def info(self):
+#         print("Brand of the car is: ", self.brand, "and model is: ", self.model)
 
 
 
-class Car(Vehicle):
-    def __init__(self,brand,model,fuel):
-        super().__init__(brand,model)
-        self.fuel = fuel
+# class Car(Vehicle):
+#     def __init__(self,brand,model,fuel):
+#         super().__init__(brand,model)
+#         self.fuel = fuel
 
-    def details(self):
-        print(self.model, "of", self.brand, "runs by", self.fuel)
+#     def details(self):
+#         print(self.model, "of", self.brand, "runs by", self.fuel)
 
-c1 = Car("Toyota", "Allion", "Octane")
-c1.info()
-c1.details()
+# c1 = Car("Toyota", "Allion", "Octane")
+# c1.info()
+# c1.details()
+
+
+# Types of Python inheritance:
+# Inheritance can be used in different ways depending on how many parent and child classes are invovled. They help model, real world relationships more effectively and allow flexibility in code reuse. 
+
+# 1. Single inheritance: In single inheritance, a child class inherits from just one parent class. 
+
+# class Person:                          #class creation
+#     def __init__(self,name):           #create constructor 
+#         self.name = name               #variable initialization 
+
+# class Employee(Person):                #create child class: Employee inherits from Person class. 
+#     def showrole(self):                #a new function
+#         print(self.name, "is an employee")
+
+# employee1 = Employee("Farzana")        #object creation 
+# employee1.showrole()                   #calling function 
+
+#2. Multiple inheritance: In multiple inheritance, a child class can inherit from more than one parent class. 
+
+# class Person:                   #parent class_1
+#     def __init__(self,name):    #constructor of parent class_1
+#         self.name = name        #initialization
+
+# class Job:                      #parent class_2
+#     def __init__(self,salary):  #constructor of parent class_2
+#         self.salary = salary    #initialization
+
+# class Employee(Person,Job):     #child class
+#     def __init__(self,name,salary):     #constructor for initializing the variables of 2 parent class
+#         Person.__init__(self,name)      #initializion  
+#         Job.__init__(self,salary)       #initializion
+
+#     def details(self):                  #create function 
+#         print(self.name, "earns", "BDT",self.salary, "per month")
+
+# employee1 = Employee("Farzana", 20000)   #create object 
+# employee1.details()                      #calling function 
+
+#3. Multi level inheritance: in multi-level inheritance a class is derived from another derived class (like a chain). 
+
+class Person:
+    def __init__(self,name):
+        self.name = name 
+
+class Employee(Person):
+    def __init__(self,name,salary):
+        super().__init__(name)  #call the Person's constructor 
+        self.salary = salary 
+
+    def showrole(self):
+        print(self.name, "earns BDT",self.salary)
+
+class Manager(Employee):
+    def department(self,dept):
+        print(self.name, "manages", dept, "department")
+        
+
+manager1 = Manager("Farzana", 20000)
+manager1.showrole()
+manager1.department("HR")
+    
+
+
+
+
+
+
 
 
 
