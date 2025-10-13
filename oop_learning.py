@@ -19,7 +19,7 @@
 # Characteristics of OOP:
 # Class, Object, Encapsulation, Polymorphism, Inheritance, Abstruction 
 
-# CLASS: collection of objects. classes are blueprints for creating objects. A class defines a set of attributes/ variables/properties/fields and methods that created objects (instances). 
+# CLASS: collection of objects. classes are blueprints for creating objects. A class defines a set of attributes/ variables/properties/fields and methods that create objects (instances). 
 # 1. Classes are created by key word "class"  
 # 2. Attributes are the variables that belongs to a class 
 # 3. Attributs are always public and can be accessed using "."
@@ -44,17 +44,17 @@
 # print(dog_1.sound_1, dog_1.color_1, dog_2.sound_2, dog_2.color_2, dog_3.sound_3, dog_3.color_3) #accessing the class 
 
 
-# string (str) method: 
+# string (str) method: it is a  builtin method than allows us to define a custom string representation of an object.  
 
 # class Dog:
-#     def __init__(self,name,age):          #the whole init function is a construtor
-#         self.name = name 
-#         self.age = age
+#     def __init__(self,name,age):          #the whole "__init__()" is a construtor
+#         self.name = name                  #initialization of variable
+#         self.age = age                    #initialization of variable
 
-#     def __str__(self):            #builtin method of parent class
+#     def __str__(self):                    #builtin method
 #         return f"{self.name} is {self.age} years old"
 
-# dog_1 = Dog("Tomy", 3)
+# dog_1 = Dog("Tomy", 3)    #created object (dog_1) and gave instance variables ("Tomy", 3). 
 # dog_2 = Dog("Lassy", 2)
 
 # # print(dog_1)
@@ -67,9 +67,9 @@
 # class Dog:
 #     species = "Canine" #class level atribute 
 
-#     def __init__(self,name,age): #the whole init function is a construtor
-#         self.name = name #instance atribute/ variable
-#         self.age = age #instance atribute/ variable
+#     def __init__(self,name,age): #the whole " __init__()" is a construtor
+#         self.name = name     #instance atribute/ variable initialization 
+#         self.age = age       #instance atribute/ variable initialization 
         
 
 #     def __str__(self):
@@ -92,9 +92,9 @@
 # class Dog:
 #     species = "Canine" #class level atribute 
 
-#     def __init__(self,name,age): #the whole init function is a construtor
-#         self.name = name #instance atribute/ instance variable
-#         self.age = age #instance atribute/ instance variable
+#     def __init__(self,name,age): #the whole "__init__()" is a construtor
+#         self.name = name         #instance atribute/ instance variable initailization 
+#         self.age = age           #instance atribute/ instance variable initialization
         
 
 #     def __str__(self):
@@ -126,23 +126,25 @@
 # Method overriding  
 
 
-# super():  
-# parent class: Animal 
+# super(): this function is used to call the parent classe's methods. in particular it is commonly used in child classes __init__() to initialize inheritate attributes. This function can be used when there is one parent class and if the child class has its own constructor.   
 
+
+
+# parent class: Animal 
 # class Animal:
 #     def __init__(self,name):
 #         self.name = name
 
-#     def info(self): #method of parent class
+#     def info(self):         #method of parent class
 #         print("animal name:", self.name) 
 
 # # child class: Dog
 # class Dog(Animal):
 #     def __init__(self,name,breed):
-#         super().__init__(name) #calling the parent constructor 
+#         super().__init__(name)      #calling the parent constructor 
 #         self.breed = breed
 
-#     def details(self): #method of child class
+#     def details(self):              #method of child class
 #         print(self.name, "is a", self.breed)
 
 # # #object creation
@@ -204,82 +206,87 @@
 
 # class Employee(Person,Job):     #child class
 #     def __init__(self,name,salary):     #constructor for initializing the variables of 2 parent class
-#         Person.__init__(self,name)      #initializion  
-#         Job.__init__(self,salary)       #initializion
+#         Person.__init__(self,name)      #initializion parent class variable   
+#         Job.__init__(self,salary)       #initializion parent class variable  
 
-#     def details(self):                  #create function 
+#     def details(self):                  #create function under child class  
 #         print(self.name, "earns", "BDT",self.salary, "per month")
 
-# employee1 = Employee("Farzana", 20000)   #create object 
+# employee1 = Employee("Farzana", 20000)   #create object and instance variable 
 # employee1.details()                      #calling function 
 
 # #3. Multi level inheritance: in multi-level inheritance a class is derived from another derived class (like a chain). 
 
-# class Person:
-#     def __init__(self,name):
-#         self.name = name 
+class Person:
+    def __init__(self,name):
+        self.name = name 
 
-# class Employee(Person):
-#     def __init__(self,name,salary):
-#         super().__init__(name)  #call the Person's constructor 
-#         self.salary = salary 
+class Employee(Person):
+    def __init__(self,name,salary):
+        super().__init__(name)  #call the Person's constructor 
+        self.salary = salary 
 
-#     def showrole(self):
-#         print(self.name, "earns BDT",self.salary)
+    def showrole(self):
+        print(self.name, "earns BDT",self.salary)
 
-# class Manager(Employee):
-#     def department(self,dept):
-#         print(self.name, "manages", dept, "department")
+    def unit (self,unit):
+        print(self.name, "manages", unit, "unit")
+
+class Manager(Employee):
+    def department(self,dept):
+        print(self.name, "manages", dept, "department")
         
 
-# manager1 = Manager("Farzana", 20000)
-# manager1.showrole()
-# manager1.department("HR")
+manager1 = Manager("Farzana", 20000)
+manager1.showrole()
+manager1.unit("payment")
+manager1.department("HR")
+
     
 # 4. Hierarchical inheritance: multiple child classes inherit from the same parent class.
 
-class Person:
-    def __init__(self,name):
-        self.name = name
+# class Person:
+#     def __init__(self,name):
+#         self.name = name
 
-class Employee(Person):
-    def role(self):
-        print(self.name, "works as an employee")
+# class Employee(Person):
+#     def role(self):
+#         print(self.name, "works as an employee")
 
-class Intern(Person):
-    def role(self):
-        print(self.name, "is an intern")
+# class Intern(Person):
+#     def role(self):
+#         print(self.name, "is an intern")
 
-employee1 = Employee("Farzana")
-employee1.role()
-intern1 = Intern("Wadi")
-intern1.role()
+# employee1 = Employee("Farzana")
+# employee1.role()
+# intern1 = Intern("Wadi")
+# intern1.role()
 
 #5. Hybrid inheritance: in hybrid inheritance is a combination of more than one type of inheritance.
 
-class Person:
-    def __init__(self,name):
-        self.name = name
+# class Person:
+#     def __init__(self,name):
+#         self.name = name
 
-class Employee(Person):
-    def role(self):
-        print(self.name, "works as an employee")
+# class Employee(Person):
+#     def role(self):
+#         print(self.name, "works as an employee")
 
-class Project:
-    def __init__(self,project_name):
-        self.project_name = project_name 
+# class Project:
+#     def __init__(self,project_name):
+#         self.project_name = project_name 
 
-class Teamlead(Employee, Project):
-    def __init__(self, name, project_name):
-        Employee.__init__(self,name)
-        Project.__init__(self,project_name)
+# class Teamlead(Employee, Project):
+#     def __init__(self, name, project_name):
+#         Employee.__init__(self,name)
+#         Project.__init__(self,project_name)
 
-    def details(self):
-        print (self.name, "leads project", self.project_name)
+#     def details(self):
+#         print (self.name, "leads project", self.project_name)
 
-lead_1 = Teamlead("Adyan", "XYZ")
-lead_1.role()
-lead_1.details()
+# lead_1 = Teamlead("Adyan", "XYZ")
+# lead_1.role()
+# lead_1.details()
 
 
 
