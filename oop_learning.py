@@ -215,32 +215,32 @@
 # employee1 = Employee("Farzana", 20000)   #create object and instance variable 
 # employee1.details()                      #calling function 
 
-# #3. Multi level inheritance: in multi-level inheritance a class is derived from another derived class (like a chain). 
+# # #3. Multi level inheritance: in multi-level inheritance a class is derived from another derived class (like a chain). 
 
-class Person:
-    def __init__(self,name):
-        self.name = name 
+# class Person:
+#     def __init__(self,name):
+#         self.name = name 
 
-class Employee(Person):
-    def __init__(self,name,salary):
-        super().__init__(name)  #call the Person's constructor 
-        self.salary = salary 
+# class Employee(Person):
+#     def __init__(self,name,salary):
+#         super().__init__(name)  #call the Person's constructor 
+#         self.salary = salary 
 
-    def showrole(self):
-        print(self.name, "earns BDT",self.salary)
+#     def showrole(self):
+#         print(self.name, "earns BDT",self.salary)
 
-    def unit (self,unit):
-        print(self.name, "manages", unit, "unit")
+#     def unit (self,unit):
+#         print(self.name, "manages", unit, "unit")
 
-class Manager(Employee):
-    def department(self,dept):
-        print(self.name, "manages", dept, "department")
+# class Manager(Employee):
+#     def department(self,dept):
+#         print(self.name, "manages", dept, "department")
         
 
-manager1 = Manager("Farzana", 20000)
-manager1.showrole()
-manager1.unit("payment")
-manager1.department("HR")
+# manager1 = Manager("Farzana", 20000)
+# manager1.showrole()
+# manager1.unit("payment")
+# manager1.department("HR")
 
     
 # 4. Hierarchical inheritance: multiple child classes inherit from the same parent class.
@@ -287,6 +287,57 @@ manager1.department("HR")
 # lead_1 = Teamlead("Adyan", "XYZ")
 # lead_1.role()
 # lead_1.details()
+
+# Polymorphism: Polymorphism means many forms. It refers to the ability of an entity (function/object) to perform different actions based on the context. Technically in python, polymorphism allows same method, function or operator to behave differently depending on object it is working with. This makes code more flexible and reusable. 
+# Why do we need polymorphism:
+# 1. ensure consistant interfaces across different classes. 
+# 2. Allows object to response diffrently to the same method call. 
+# 3. Enables writing flexible, reusable codes that works across types. 
+# 4. Simplifies testing and future extention of code.
+# Types of pilymorphism: compile-time polymorphism (method overloading) and run-time polymorphism (method overriding).
+# compile-time polymorphism (method overloading): 
+
+# compile-time polymorphism example:
+
+# class Calculator:
+#     def multiply(self, a=1, b=1, *args):  #*args = unlimited aguments. argument is a tupple and it accepts multiple value. 
+
+#         result = a*b 
+#         for num in args:
+#             result *= num 
+#         return result 
+
+# calc = Calculator()
+# print(calc.multiply())
+# print(calc.multiply(4))
+# print(calc.multiply(2,3))
+# print(calc.multiply(2,3,4,5,6,7))
+# print(1*2*3*4*5*6*7)
+
+# run-time polymorphism (method overriding):
+# Example: 
+
+class Animal:
+    def sound(self):
+        return "some generic sound"
+    
+class Dog(Animal):
+    def sound(self):
+        return "bark"
+    
+class Cat(Animal):
+    def sound(self):
+        return "meow"
+
+#polymorphic behavior 
+animals = [Animal(),Dog(),Cat()]
+for animal in animals:
+    print(animal.sound())
+
+# Built-in polymorphism/ polymorphism in built-in fundtion: Python built-in functions like; len() and max() are polymorphic they work with different data types and return results based on type of object passed. Example;
+print(max(3,6,7,8))
+print(len("Shourov"))
+
 
 
 

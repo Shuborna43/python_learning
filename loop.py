@@ -213,3 +213,38 @@
 #   if flag == False:
 #     new_list.append(list_1[i])
 # print(new_list)
+
+
+# def increment(counter):
+#     counter = counter + 1
+#     print(counter)
+    
+# counter = 10
+
+# increment(counter)
+# print(counter)
+
+
+
+
+list_1 = [1, 2, 3, 4, 5]
+
+j = len(list_1)
+i = 0
+while i<j:
+  list_1.insert(i,list_1[j-1]) 
+  i+=1
+print(list_1)
+
+
+k = len(list_1)
+while j == k:
+  i = 0
+  if list_1[i] == list_1[k-1]:
+    del list_1[k-1]
+  i+=1
+  k-=1
+print(list_1)
+
+
+  
