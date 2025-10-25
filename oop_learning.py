@@ -317,26 +317,48 @@
 # run-time polymorphism (method overriding):
 # Example: 
 
-class Animal:
-    def sound(self):
-        return "some generic sound"
+# class Animal:
+#     def sound(self):
+#         return "some generic sound"
     
-class Dog(Animal):
-    def sound(self):
-        return "bark"
+# class Dog(Animal):
+#     def sound(self):
+#         return "bark"
     
-class Cat(Animal):
-    def sound(self):
-        return "meow"
+# class Cat(Animal):
+#     def sound(self):
+#         return "meow"
 
 #polymorphic behavior 
-animals = [Animal(),Dog(),Cat()]
-for animal in animals:
-    print(animal.sound())
+# animals = [Animal(),Dog(),Cat()]
+# for animal in animals:
+#     print(animal.sound())
 
 # Built-in polymorphism/ polymorphism in built-in fundtion: Python built-in functions like; len() and max() are polymorphic they work with different data types and return results based on type of object passed. Example;
-print(max(3,6,7,8))
-print(len("Shourov"))
+# print(max(3,6,7,8))
+# print(len("Shourov"))
+
+# Duck typing: Polymorphism lets functions accept different object types as long as they support needed behavior. Using duck typing python focuses on whether an object has right method not its type allowing flexible and reusable code. 
+
+class Pen():
+    def use(self):
+        return 8877655
+class Eraser(): 
+    def use(self):
+        return "erasing"
+
+def perform_task(tool):
+    print (tool.use()) 
+
+perform_task(Pen())
+perform_task(Eraser())
+
+# Operator Polymorphism/Operator overloading: In python same operator can perform different task depending on operand types. This is known as operator overloading. 
+
+print(3+8)
+print("orrange"+"apple")
+print([3,4,5,6]+["O","P","G"])  
+
 
 
 
