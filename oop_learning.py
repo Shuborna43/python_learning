@@ -340,27 +340,37 @@
 
 # Duck typing: Polymorphism lets functions accept different object types as long as they support needed behavior. Using duck typing python focuses on whether an object has right method not its type allowing flexible and reusable code. 
 
-class Pen():
-    def use(self):
-        return 8877655
-class Eraser(): 
-    def use(self):
-        return "erasing"
+# class Pen:
+#     def use(self):
+#         return 8877655
+# class Eraser: 
+#     def use(self):
+#         return "erasing"
 
-def perform_task(tool):
-    print (tool.use()) 
+# def perform_task(tool):
+#     print (tool.use()) 
 
-perform_task(Pen())
-perform_task(Eraser())
+# perform_task(Pen())
+# perform_task(Eraser())
 
 # Operator Polymorphism/Operator overloading: In python same operator can perform different task depending on operand types. This is known as operator overloading. 
 
-print(3+8)
-print("orrange"+"apple")
-print([3,4,5,6]+["O","P","G"])  
+# print(3+8)
+# print("orrange"+"apple")
+# print([3,4,5,6]+["O","P","G"])  
 
 
+# Encapsulation: Encapsulation means hiding internal detail of a class and only exposing what's necessary. It helps to protect imporatnt data from being changed directly and keeps the codes secure and organized. 
 
+class Employee():
+    def __init__(self,name,salary):
+        self.name = name 
+        self.__salary = salary #to keep a variable as private need to give __( 2 underscpre) before it. it is called name mangling)
+
+employee = Employee("Farzana",20000)
+
+print(employee.name)
+print(employee._Employee__salary)
 
 
 
