@@ -362,16 +362,58 @@
 
 # Encapsulation: Encapsulation means hiding internal detail of a class and only exposing what's necessary. It helps to protect imporatnt data from being changed directly and keeps the codes secure and organized. 
 
-class Employee():
-    def __init__(self,name,salary):
-        self.name = name 
-        self.__salary = salary #to keep a variable as private need to give __( 2 underscpre) before it. it is called name mangling)
 
-employee = Employee("Farzana",20000)
 
-print(employee.name)
-print(employee._Employee__salary)
 
+# class Employee():
+#     def __init__(self,name,salary):
+#         self.name = name 
+#         self.__salary = salary #to keep a variable as private need to give __( 2 underscore) before it. it is called name mangling)
+
+# employee = Employee("Farzana",20000)
+
+# print(employee.name)
+# print(employee._Employee__salary)
+
+# Why do we need encapsulation?: 
+# Protects data from unauthorized access and accidental modification. 
+# control data updates using getter abd setter methods with validation. 
+# enhances modularity by hiding internal implementation detail. 
+# simplifies maintenance through centralized data handling logic. 
+# reflects real world scenerios like restricting direct access to a bank account balance. 
+
+# Example:
+
+# class BankAccount:
+#     def __init__(self, owner, balance):
+#         self.owner = owner 
+#         self.__balance = balance 
+
+#     def deposite(self, amount):
+#         self.__balance += amount
+
+#     def withdraw(self, amount):
+#         if amount <= self.__balance:
+#             self.__balance -=amount 
+#         else:
+#             print("insufficient balance")
+
+#     def get_balance(self):
+#         return self.__balance
+    
+# account = BankAccount("Farzana", 20000)
+# #print (account.__balance)
+# print(account.get_balance())
+# account.deposite(400)
+# print(account.get_balance())
+# account.withdraw(600)
+# print(account.get_balance())
+# account.withdraw(40000)
+
+# Access specifiers: it defines how class members (variables and methods) can be accessed from outside the class. They help in implementing encapsulation by controlling the visibility of data. There are 3 types of access specifiers: Public, Protected, Private. 
+# Public memebers: who can be accessed from inside the class, outside the class or from other modules. 
+# Protected members: protected memebers are variables or methods that are intended to be accessed only within the class and its sub-class. They are not strictly private but should be treated as internal. naming convention:  _variable (underscore then variable). Use of this is limited in python.  
+# private memebrs: Private members are variables or methods that cannot be accessed directly from outside the class. they are used to restrict access and protect internal data. in python private memebrs are definned with __ (double underscore or prefix).  
 
 
 
