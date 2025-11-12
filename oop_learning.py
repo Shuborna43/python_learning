@@ -413,7 +413,67 @@
 # Access specifiers: it defines how class members (variables and methods) can be accessed from outside the class. They help in implementing encapsulation by controlling the visibility of data. There are 3 types of access specifiers: Public, Protected, Private. 
 # Public memebers: who can be accessed from inside the class, outside the class or from other modules. 
 # Protected members: protected memebers are variables or methods that are intended to be accessed only within the class and its sub-class. They are not strictly private but should be treated as internal. naming convention:  _variable (underscore then variable). Use of this is limited in python.  
-# private memebrs: Private members are variables or methods that cannot be accessed directly from outside the class. they are used to restrict access and protect internal data. in python private memebrs are definned with __ (double underscore or prefix).  
+# Example:
+# class Employee:
+#     def __init__(self,name,age):
+#         self.name = name
+#         self._age = age 
+
+# class Sub_employee(Employee):
+#     def show_age(self):
+#         print("age:", self._age)
+
+# E1 = Sub_employee("Farzana", 45)
+# print("Emploee name is:", E1.name) 
+# E1.show_age() 
+
+# private memebrs: Private members are variables or methods that cannot be accessed directly from outside the class. they are used to restrict access and protect internal data. in python private memebrs are definned with __ (double underscore or prefix). 
+
+# Getter and setter method: 
+
+# class Student:
+#     def __init__(self,name):
+#         self.name = name 
+#         self.__grade = "B" #private atribute
+
+#     #getter method
+#     def get_grade(self):
+#         return self.__grade 
+    
+#     #setter method
+#     def set_grade(self,new_grade):
+#         grades = ["A", "B", "C", "D", "E", "F"]
+#         if new_grade in grades:
+#             self.__grade = new_grade
+#         else:
+#             print("Invalid grade")
+
+# S1 = Student("Farzana")
+# print("Name of the student is:", S1.name)
+# print("Old grade:", S1.get_grade())
+# S1.set_grade("A")
+# print("New grade:", S1.get_grade())
+
+# Abstraction: Data abstraction means showing only the Essential features and hiding the complex internal details. In python, abstraction is used to hide the implementation details from the users and expose only necessary parts making the code simpler and easier to intarect with.
+
+#Abstract base class: An Abstract Base Class (ABC) is used to achieve data astraction by defining a common interface for its sub-classes. It cannot be instantiated directly and serves as a blue print for other classes. 
+#Example:
+from abc import ABC, abstractmethod
+class Greet(ABC):  #Abstract Base Class(ABC)
+    @abstractmethod
+    def say_hello(self):
+        pass 
+
+class English(Greet):
+    def say_hello(self):
+        return "Hello"
+    
+E1 = English()
+print(E1.say_hello())
+
+
+
+
 
 
 
