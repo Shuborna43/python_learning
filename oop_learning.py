@@ -107,10 +107,10 @@
 # print(dog_1.species) #class variable
 # print(dog_1.name, dog_2.name) #instance variable 
 
-# #modify instance variables:
+# # #modify instance variables:
 # dog_1.name = "Max"
 # print(dog_1.name)
-# #modify class variables:
+# # #modify class variables:
 # Dog.species = "Feline"
 # print(dog_1.species)
 # print(dog_2.species)
@@ -458,26 +458,72 @@
 
 #Abstract base class: An Abstract Base Class (ABC) is used to achieve data astraction by defining a common interface for its sub-classes. It cannot be instantiated directly and serves as a blue print for other classes. 
 #Example:
-from abc import ABC, abstractmethod
-class Greet(ABC):  #Abstract Base Class(ABC)
-    @abstractmethod
-    def say_hello(self):
-        pass 
+# from abc import ABC, abstract method
+# class Greet(ABC):  #Abstract Base Class(ABC)
+#     @abstractmethod #declaration anotation convention 
+#     def say_hello(self):
+#         pass 
 
-class English(Greet):
-    def say_hello(self):
-        return "Hello"
+# class English(Greet):
+#     def say_hello(self):
+#         return "Hello"
     
-E1 = English()
-print(E1.say_hello())
+# E1 = English()
+# print(E1.say_hello())
+
+# Components of abstraction:
+#Abstract methods
+#Concrete methods 
+#Abstract properties 
+#Class Instantiation Rules 
+
+#Abstract methods: Abstract methods are the method declarations without a body defined inside an abstract class. They act as placeholders that force sub-classes to provide their own specific implementation, esuring consistant structure across derived classes. 
+# Example:   
+# from abc import ABC, abstractmethod
+# class Animal(ABC): 
+#     @abstractmethod #declaration anotation convention 
+#     def make_sound(self):
+#         pass
+
+#Concrete methods: Conctete methods are fully implemented methods within an abstract class. sub-classes can inherit and use them directly, promoting code reuse without needing to redefine common functionality. 
+# Example:  
+# from abc import ABC, abstractmethod
+# class Animal(ABC): 
+#     @abstractmethod #declaration anotation convention 
+#     def make_sound(self):
+#         pass
+
+#     def move(self):    #it is a concrete method which has implementation 
+#         return "moving" 
 
 
+#Abstract properties: abstract properties work like abstract methods but are used for properties. These properties are declared with "@property" decorator and marked as abstract using @abstractmethod. sub-classes must implement these properties. 
+#example:
 
+# from abc import ABC, abstractmethod
+# class Animal(ABC): 
+#     @property
+#     @abstractmethod #declaration anotation convention 
+#     def species(self):
+#         pass #abstract property, sub-class should be implemented this part. 
 
+# class Dog(Animal):
+#     @property 
+#     def species(self):
+#         return "Canine" 
 
+# d1 = Dog()
+# print(d1.species)
 
+#Class Instantiation Rules: abstract classes can not be instantiated directly. This is because they contain one or more abstract methods or properties that lack implementations. Attempting to instantiate an abstract class results in a type error.  
+#Example: 
 
-
+from abc import ABC, abstractmethod
+class Animal(ABC): 
+    @abstractmethod #declaration anotation convention 
+    def species(self):
+        pass 
+a1 = Animal()
 
 
 
