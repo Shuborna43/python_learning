@@ -456,9 +456,9 @@
 
 # Abstraction: Data abstraction means showing only the Essential features and hiding the complex internal details. In python, abstraction is used to hide the implementation details from the users and expose only necessary parts making the code simpler and easier to intarect with.
 
-#Abstract base class: An Abstract Base Class (ABC) is used to achieve data astraction by defining a common interface for its sub-classes. It cannot be instantiated directly and serves as a blue print for other classes. 
+#Abstract base class: An Abstract Base Class (ABC) is used to achieve data abstraction by defining a common interface for its sub-classes. It cannot be instantiated directly and serves as a blue print for other classes. 
 #Example:
-# from abc import ABC, abstract method
+# from abc import ABC, abstractmethod
 # class Greet(ABC):  #Abstract Base Class(ABC)
 #     @abstractmethod #declaration anotation convention 
 #     def say_hello(self):
