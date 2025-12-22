@@ -88,26 +88,85 @@
 # red 25.0
 
 #Answer 3: 
-from abc import ABC, abstractmethod
-class Shape(ABC):  #Abstract Base Class(ABC)
-    def __init__(self,c):
-        self.c = c
+# from abc import ABC, abstractmethod
+# class Shape(ABC):  #Abstract Base Class(ABC)
+#     def __init__(self,c):
+#         self.c = c
     
-    def get_color(self):
-        return self.c
+#     def get_color(self):
+#         return self.c
     
-    @abstractmethod
-    def get_area(self):
-       pass 
+#     @abstractmethod
+#     def get_area(self):
+#        pass 
 
 
-class Square(Shape):
-    def __init__(self,c,side):
-        super().__init__(c)
-        self.side =side
+# class Square(Shape):
+#     def __init__(self,c,side):
+#         super().__init__(c)
+#         self.side =side
     
-    def get_area(self):
-        return self.side * self.side
+#     def get_area(self):
+#         return self.side * self.side
 
-s1 = Square("red",5.0)
-print (s1.get_color(), s1.get_area())
+# s1 = Square("red",5.0)
+# print (s1.get_color(), s1.get_area())
+
+
+
+
+# 4. Encapsulation in Python
+# Problem Description
+# Create a Person class that demonstrates encapsulation via private attributes and public getters/setters.
+# Class Requirements
+# Private Attributes:
+# name (String) → default: "Geeks"
+
+
+# age (int) → default: 10
+
+
+# Public Methods:
+# get_name(), get_age() → getters
+
+
+# set_name(name), set_age(age) → setters
+
+
+# Example
+# Function Calls:
+# Person(), get_name(), set_name("John"), set_age(21), get_name(), get_age()
+
+# Output:
+# Geeks John 21
+
+class Person:
+    def __init__(self): 
+        #these are private atributes: 
+        self.__name = "Geeks"
+        self.__age = 10
+        
+        #getter method for name:
+    def get_name(self):
+        return self.__name
+    
+        #getter method for age:
+    def get_age(self):
+        return self.__age
+    
+        #setter method for name:
+    def set_name(self,name):
+        self.__name = name
+
+        #setter method for age:
+    def set_age(self,age):
+        self.__age = age
+
+#Object creation 
+person_1 = Person() 
+print(person_1.get_name(), person_1.get_age())   
+
+#setting new variables with setter():
+person_1.set_name("John")
+person_1.set_age(21)
+print(person_1.get_name(), person_1.get_age())  
