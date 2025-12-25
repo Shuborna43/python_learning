@@ -140,33 +140,153 @@
 # Output:
 # Geeks John 21
 
-class Person:
-    def __init__(self): 
-        #these are private atributes: 
-        self.__name = "Geeks"
-        self.__age = 10
+# class Person:
+#     def __init__(self): 
+#         #these are private atributes: 
+#         self.__name = "Geeks"
+#         self.__age = 10
         
-        #getter method for name:
-    def get_name(self):
-        return self.__name
+#         #getter method for name:
+#     def get_name(self):
+#         return self.__name
     
-        #getter method for age:
-    def get_age(self):
-        return self.__age
+#         #getter method for age:
+#     def get_age(self):
+#         return self.__age
     
-        #setter method for name:
-    def set_name(self,name):
-        self.__name = name
+#         #setter method for name:
+#     def set_name(self,name):
+#         self.__name = name
 
-        #setter method for age:
-    def set_age(self,age):
-        self.__age = age
+#         #setter method for age:
+#     def set_age(self,age):
+#         self.__age = age
 
-#Object creation 
-person_1 = Person() 
-print(person_1.get_name(), person_1.get_age())   
+# #Object creation 
+# person_1 = Person() 
+# print(person_1.get_name(), person_1.get_age())   
 
-#setting new variables with setter():
-person_1.set_name("John")
-person_1.set_age(21)
-print(person_1.get_name(), person_1.get_age())  
+# #setting new variables with setter():
+# person_1.set_name("John")
+# person_1.set_age(21)
+# print(person_1.get_name(), person_1.get_age())  
+
+
+
+
+
+
+
+
+
+
+
+
+# Question:
+# Ques 01: 
+# Vehicle, Car, and Motorcycle (Inheritance)
+# Problem Description
+
+# Create a base class called Vehicle.
+# Then create two subclasses Car and Motorcycle that inherit from the Vehicle class.
+# Each subclass should have its own implementation of a speed() method.
+
+# Class Requirements
+
+# Parent Class:
+# Vehicle
+# Attribute: name (String)
+# Child Classes:
+
+# Car
+# Method: speed() → prints car speed
+# Motorcycle
+# Method: speed() → prints motorcycle speed
+
+# Output Example:
+
+# Car speed is 120 km/h
+# Motorcycle speed is 80 km/h
+
+
+class Vehicle:
+    def __init__(self,km):
+        self.km = km 
+
+class Car(Vehicle):
+    def speed(self):
+        print("Car speed is", self.km)
+
+class Motorcycle(Vehicle): 
+    def speed(self):
+        print("Motorcycle speed is", self.km)
+    
+c = Car("120 km/h")
+c.speed()
+
+m = Motorcycle("80 km/h")
+m.speed()
+
+
+# # Question
+
+# 5. Rectangle and Square (Inheritance)
+# Problem Description
+# Create a class named Rectangle that can calculate area and perimeter.
+#  Create another class named Square that inherits from Rectangle.
+#  Square should reuse the Rectangle methods.
+
+# Class Requirements
+# Rectangle Class:
+# Attributes:
+
+# length (int)
+
+# width (int)
+
+# Methods:
+
+# area() → returns area
+
+# perimeter() → returns perimeter
+
+# Square Class:
+# Inherits from Rectangle
+
+# Attribute:
+
+# side (int)
+
+# Uses the same value for length and width
+
+# ExampleOutput:
+# Rectangle Area: 50
+# Rectangle Perimeter: 30
+# Square Area: 16
+# Square Perimeter: 16
+
+
+class Rectangle:
+    def __init__(self,width,height):
+        self.width = width 
+        self.height = height  
+
+    def area(self):
+        return self.width*self.height 
+
+    def perimeter(self):
+        return 2*(self.width+self.height) 
+    
+    def info(self):
+        print ("Area of Rectangle is:", self.area())
+        print ("Perimeter of Rectangle is:", self.perimeter())
+
+class Square(Rectangle):
+    def info(self):
+        print ("Area of Square is:", self.area())
+        print ("Perimeter of Square is:", self.perimeter())
+
+R1 = Rectangle(5,10)
+R1.info()
+S1 = Square(4,4)
+S1.info()

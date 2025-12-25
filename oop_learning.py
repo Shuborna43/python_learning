@@ -365,15 +365,15 @@
 
 
 
-class Employee():
-    def __init__(self,name,salary):
-        self.name = name 
-        self.__salary = salary #to keep a variable as private need to give __( 2 underscore) before it. it is called name mangling)
+# class Employee():
+#     def __init__(self,name,salary):
+#         self.name = name 
+#         self.__salary = salary #to keep a variable as private need to give __( 2 underscore) before it. it is called name mangling)
 
-employee = Employee("Farzana",20000)
+# employee = Employee("Farzana",20000)
 
-print(employee.name)
-print(employee._Employee__salary)
+# print(employee.name)
+# print(employee._Employee__salary)
 
 # Why do we need encapsulation?: 
 # Protects data from unauthorized access and accidental modification. 
