@@ -210,21 +210,21 @@
 
 
 # class Vehicle:
-#     def __init__(self,km):
-#         self.km = km 
+#     def __init__(self,name):
+#         self.name = name 
 
 # class Car(Vehicle):
 #     def speed(self):
-#         print("Car speed is", self.km)
+#         print(self.name, "speed is 120km")
 
 # class Motorcycle(Vehicle): 
 #     def speed(self):
-#         print("Motorcycle speed is", self.km)
+#         print(self.name, "" speed is 80km")
     
-# c = Car("120 km/h")
+# c = Car("TOYOTA")
 # c.speed()
 
-# m = Motorcycle("80 km/h")
+# m = Motorcycle("YAMAHA")
 # m.speed()
 
 
@@ -267,29 +267,28 @@
 
 
 # class Rectangle:
-#     def __init__(self,width,height):
+#     def __init__(self,width,length):
 #         self.width = width 
-#         self.height = height  
+#         self.length = length 
 
 #     def area(self):
-#         return self.width*self.height 
+#         return self.width*self.length
 
 #     def perimeter(self):
-#         return 2*(self.width+self.height) 
-    
-#     def info(self):
-#         print ("Area of Rectangle is:", self.area())
-#         print ("Perimeter of Rectangle is:", self.perimeter())
+#         return 2*(self.width+self.length) 
 
 # class Square(Rectangle):
-#     def info(self):
-#         print ("Area of Square is:", self.area())
-#         print ("Perimeter of Square is:", self.perimeter())
+#     def __init__(self,side):
+#         super().__init__(side,side)
 
 # R1 = Rectangle(5,10)
-# R1.info()
-# S1 = Square(4,4)
-# S1.info()
+# print("Rectangle Area:", R1.area())
+# print("Rectangle Perimeter:", R1.perimeter())
+
+# S1 = Square(4)
+# print("Square Area:", S1.area())
+# print("Square Perimeter:", S1.perimeter())
+
 
 
 # Question: 6
@@ -378,99 +377,99 @@
 # Clean Code - Available
 # Python Basics - Available
 
-class Book:
-    def __init__(self,title,author):
-        self.title = title
-        self.author = author 
-        self.is_available = True  
+# class Book:
+#     def __init__(self,title,author):
+#         self.title = title
+#         self.author = author 
+#         self.is_available = True  
 
-    def borrow(self):
-        if self.is_available:
-            self.is_available = False 
-            print("borrowed:", self.title)
-        else:
-            print("Not available")
+#     def borrow(self):
+#         if self.is_available:
+#             self.is_available = False 
+#             print("borrowed:", self.title)
+#         else:
+#             print("Not available")
             
-    def return_1 (self):
-        self.is_available = True 
-        print("returned:", self.title)
+#     def return_1 (self):
+#         self.is_available = True 
+#         print("returned:", self.title)
 
-class Library: 
-    def __init__(self):
-        self.books = []
+# class Library: 
+#     def __init__(self):
+#         self.books = []
 
-    def add_book(self,book):
-        self.books.append(book)
-        print("Book added:", book.title)
+#     def add_book(self,book):
+#         self.books.append(book)
+#         print("Book added:", book.title)
 
-    def borrow_book(self,title):
-        for book in self.books:
-            if book.title == title:
-                book.borrow()
-                return  
-            print("Book not found")
+#     def borrow_book(self,title):
+#         for book in self.books:
+#             if book.title == title:
+#                 book.borrow()
+#                 return  
+#             #print("Book not found")
 
-    def return_book(self,title):
-        for book in self.books:
-            if book.title == title:
-                book.return_1()
-                return  
-            print("Book not found")
+#     def return_book(self,title):
+#         for book in self.books:
+#             if book.title == title:
+#                 book.return_1()
+#                 return  
+#             print("Book not found")
 
-    def show_books(self):
-        for book in self.books:
-            status = "Available" if book.is_available else "Borrowed"
-            print(f"{book.title}-{status}")
+#     def show_books(self):
+#         for book in self.books:
+#             status = "Available" if book.is_available else "Borrowed"
+#             print(f"{book.title}-{status}")
 
-# book_1 = Book("Clean Code","Rober C. Martin")
-# book_2 = Book("Python Basics","Shurovi Taj")
+# # book_1 = Book("Clean Code","Rober C. Martin")
+# # book_2 = Book("Python Basics","Shurovi Taj")
+
+# # library = Library()
+
+# # library.add_book(book_1)
+# # library.add_book(book_2)
+
+# # library.borrow_book("Clean Code")
+# # library.borrow_book("Clean Code")
+
+# # book_1.return_book()
+# # library.show_books()
+
 
 # library = Library()
 
-# library.add_book(book_1)
-# library.add_book(book_2)
+# while True:
+#     print("\n1. Add books")
+#     print("2. Borrow books")
+#     print("3. Return books")
+#     print("4. Display all books")
+#     print("5. Exit")
 
-# library.borrow_book("Clean Code")
-# library.borrow_book("Clean Code")
-
-# book_1.return_book()
-# library.show_books()
-
-
-library = Library()
-
-while True:
-    print("\n1. Add books")
-    print("2. Borrow books")
-    print("3. Return books")
-    print("4. Display all books")
-    print("5. Exit")
-
-    choice = input("Enter your choice: ") 
+#     choice = input("Enter your choice: ") 
 
 
-    if choice == "1":
-        title = input("Enter book title: ")
-        author = input("Enter the name of the author: ")
-        book = Book(title,author)
-        library.add_book(book)
+#     if choice == "1":
+#         title = input("Enter book title: ")
+#         author = input("Enter the name of the author: ")
+#         book = Book(title,author)
+#         library.add_book(book)
 
-    elif choice == "2":
-        title = input("Enter book title to borrow: ")
-        library.borrow_book(title)
+#     elif choice == "2":
+#         title = input("Enter book title to borrow: ")
+#         library.borrow_book(title)
 
-    elif choice == "3":
-        title = input("Enter book title to return: ")
-        library.return_book(title)
+#     elif choice == "3":
+#         title = input("Enter book title to return: ")
+#         library.return_book(title)
     
-    elif choice == "4":
-        library.show_books()
+#     elif choice == "4":
+#         library.show_books()
     
-    elif choice == "5":
-        print ("Exiting Program")
-        break 
-    else:
-        print("Invalid Choice")
+#     elif choice == "5":
+#         print ("Exiting Program")
+#         break 
+#     else:
+#         print("Invalid Choice")
 
 
 
