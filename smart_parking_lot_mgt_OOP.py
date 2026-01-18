@@ -101,9 +101,57 @@ def to_bool(user_input):
     else:
         return False 
 
-
 def main():
-    ticket = []     
+    tickets = []    
+    number_of_tickets = int(input("enter the number of tickets: ")) 
+
+    for ticket in range(number_of_tickets):
+        print(f"\nTicket {ticket+1}:")
+        vehicle_type = input("enter vehicle type: car/ bike / truck: ").strip().lower()
+        plate_number = input("enter plate number").strip().lower()
+        hours_parked = int(input("enter hours parked"))
+        membership = to_bool(input("Do you have membership (Yes/No)? : "))
+        peak_hour  = to_bool(input("Is this peak_hour (Yes/No): ?"))
+
+        if vehicle_type == "car":
+            ticket = CarTicket(plate_number, hours_parked, membership, peak_hour)
+
+        elif vehicle_type == "bike":
+            ticket = BikeTicket(plate_number, hours_parked, membership, peak_hour)
+
+        elif vehicle_type == "truck":
+            ticket = TruckTicket(plate_number, hours_parked, membership, peak_hour)
+
+        else: 
+            print("Invalid Entry, Please Try Again")
+
+        tickets.append(ticket)
+        print("\n ___________Bill Summary_________")
+
+        for t in tickets:
+            total = t.calculate_total_fee()
+
+            if isinstance(t,CarTicket):
+                v_name = "Car" 
+
+            if isinstance(t,BikeTicket):
+                v_name = "Bike"
+
+            if isinstance(t,TruckTicket):
+                v_name = "Truck" 
+
+            print(f"Plate: {t.get_plate_number()} |, Type: {v_name} | Total Fee: {total}")
+
+if __name__ == "__main__":
+    main()
+
+
+    
+
+
+
+
+
 
 
       
