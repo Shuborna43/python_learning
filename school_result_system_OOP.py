@@ -75,7 +75,7 @@ class SchoolStudent(StudentResult):
         return gpa
     
     def bonus_points(self,gpa):
-        if self.has_co_curricular():
+        if self.get_has_co_curricular():
             return gpa +0.2
         return gpa 
     
@@ -89,8 +89,37 @@ class SchoolStudent(StudentResult):
         else:
             return "No Scholarship"
  
+students_list = []
+n = int(input("Enter number of students: "))
 
-             
+for stu in range(n):
+    print(f"\n Enter details for student {stu + 1} ")
+
+    student_id = input("Enter student ID: ")
+    student_name = input("Enter student name: ")
+
+    total_subject = int(input("Enter total number of subjects: "))
+    marks = []
+    for sub in range(total_subject):
+        mark = float(input(f"Enter mark for subject {sub + 1}: "))
+        marks.append(mark)
+
+    attendance = int(input("Enter the % of attendance: ")) 
+    co_curricular_activity = input("provide yes/no for scholarship: ").lower()
+    has_co_curricular = True if co_curricular_activity == "yes" else False 
+
+    student = SchoolStudent(student_id,student_name,marks,attendance,has_co_curricular)
+
+    students_list.append(student)
+
+print("\n ==== Student Results ====")
+for student in students_list:
+    final_gpa = student.final_gpa()
+    scholarship = student.scholarship_status(final_gpa)
+
+    print(f"ID: {student.get_student_id()}, Name: {student.get_name()}, GPA: {final_gpa}, Scholarship: {scholarship} ")
+
+
 
         
 
