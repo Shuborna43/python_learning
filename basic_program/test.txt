@@ -1,0 +1,7 @@
+Can you clarify what you mean by “python instructions for code”?
+Do you want:
+📌 Basic rules of how to write Python code?
+📌 Step-by-step how to run Python code on your PC/Mac?
+📌 Common syntax (if, loop, function, class etc.)?
+📌 How to structure a full project?
+For now, here’s a quick beginner cheat-sheet 👇
