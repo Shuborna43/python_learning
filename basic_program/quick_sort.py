@@ -15,7 +15,7 @@ def partition(list_1,low,high):
     
     i = low-1 
 
-    #
+    # 
     for j in range(low,high):
         if list_1[j] < pivot:
             i += 1
@@ -31,7 +31,7 @@ def quick_sort(list_1,low,high):
     if low < high:
         # pi is the partition return index of the pivot 
         
-        pi = partition(list_1,low,high)
+        pi = partition(list_1,low,high) #pi = pivot value
         #recursion calls for smaller elements and greater of equals elements 
         quick_sort(list_1,low,pi-1)
         quick_sort(list_1,pi+1,high)
